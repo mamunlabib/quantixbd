@@ -7,25 +7,27 @@
 <title>Quantix BD — Premium Imports, Delivered with Trust</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700&family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700&family=Poppins:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
 <style>
   :root{
-    --green:#1a6b3c;
-    --green-dark:#0f4a28;
-    --green-light:#2a8a52;
-    --gold:#f0a500;
-    --gold-dark:#c98700;
-    --gold-light:#ffc24d;
+    --primary:#1a73e8;
+    --primary-dark:#1565c0;
+    --navy:#0d1b4b;
+    --navy-deep:#081334;
+    --electric:#4fc3f7;
+    --white:#ffffff;
+    --bg:#ffffff;
+    --bg-soft:#f0f7ff;
     --whatsapp:#25d366;
-    --whatsapp-dark:#128c7e;
-    --bg:#fafaf7;
-    --card:#ffffff;
-    --text:#1f2a24;
-    --muted:#5a6661;
-    --border:rgba(26,107,60,0.12);
-    --shadow:0 10px 30px rgba(15,74,40,0.10);
-    --shadow-lg:0 20px 50px rgba(15,74,40,0.18);
-    --radius:18px;
+    --whatsapp-dark:#1ebe57;
+    --text:#0d1b4b;
+    --muted:#5a6b8a;
+    --border:rgba(26,115,232,0.15);
+    --shadow-sm:0 2px 8px rgba(13,27,75,0.06);
+    --shadow:0 10px 30px rgba(13,27,75,0.10);
+    --shadow-lg:0 24px 60px rgba(13,27,75,0.18);
+    --shadow-blue:0 12px 32px rgba(26,115,232,0.35);
+    --radius:16px;
   }
 
   *{box-sizing:border-box;margin:0;padding:0}
@@ -38,7 +40,10 @@
     overflow-x:hidden;
   }
   body.lang-bn{font-family:'Hind Siliguri','Poppins',sans-serif}
-  body.lang-bn h1,body.lang-bn h2,body.lang-bn h3,body.lang-bn h4{font-family:'Hind Siliguri',sans-serif;letter-spacing:0}
+  body.lang-bn h1,
+  body.lang-bn h2,
+  body.lang-bn h3,
+  body.lang-bn h4{font-family:'Hind Siliguri',sans-serif;letter-spacing:0}
 
   img{max-width:100%;display:block}
   a{color:inherit;text-decoration:none}
@@ -61,13 +66,16 @@
     position:sticky;
     top:0;
     z-index:1000;
-    background:rgba(255,255,255,0.92);
-    backdrop-filter:blur(12px);
-    -webkit-backdrop-filter:blur(12px);
-    border-bottom:1px solid var(--border);
-    transition:box-shadow .3s ease;
+    background:rgba(255,255,255,0.95);
+    backdrop-filter:blur(14px);
+    -webkit-backdrop-filter:blur(14px);
+    border-bottom:1px solid transparent;
+    transition:box-shadow .3s ease, border-color .3s ease;
   }
-  header.scrolled{box-shadow:0 6px 24px rgba(0,0,0,0.06)}
+  header.scrolled{
+    box-shadow:0 8px 28px rgba(13,27,75,0.10);
+    border-bottom-color:var(--border);
+  }
   .nav{
     display:flex;
     align-items:center;
@@ -81,68 +89,81 @@
     gap:10px;
     font-weight:800;
     font-size:1.35rem;
-    color:var(--green);
-    letter-spacing:-0.3px;
+    color:var(--primary);
+    letter-spacing:-0.4px;
   }
   .logo-mark{
-    width:38px;height:38px;
-    border-radius:10px;
-    background:linear-gradient(135deg,var(--green),var(--green-light));
+    width:40px;height:40px;
+    border-radius:12px;
+    background:linear-gradient(135deg,var(--primary),var(--electric));
     display:grid;place-items:center;
-    color:#fff;font-weight:800;font-size:1rem;
-    box-shadow:0 6px 14px rgba(26,107,60,0.3);
+    color:#fff;font-weight:900;font-size:1.1rem;
+    box-shadow:0 8px 18px rgba(26,115,232,0.4);
     position:relative;
     overflow:hidden;
   }
   .logo-mark::after{
     content:"";
     position:absolute;inset:0;
-    background:linear-gradient(135deg,transparent 40%,var(--gold) 41%,var(--gold) 50%,transparent 51%);
-    opacity:.55;
+    background:linear-gradient(135deg,transparent 50%,rgba(255,255,255,0.35) 51%);
   }
-  .logo span.bd{color:var(--gold)}
+  .logo span.bd{color:var(--navy)}
 
   .nav-links{
     display:none;
-    gap:28px;
+    gap:32px;
     align-items:center;
   }
   .nav-links a{
-    font-weight:500;
+    font-weight:600;
     font-size:0.95rem;
-    color:var(--text);
+    color:var(--navy);
     position:relative;
     padding:6px 0;
     transition:color .2s;
   }
   .nav-links a::after{
     content:"";
-    position:absolute;left:0;bottom:0;
-    width:0;height:2px;
-    background:var(--gold);
-    transition:width .3s ease;
+    position:absolute;left:50%;bottom:-2px;
+    width:0;height:2.5px;
+    background:linear-gradient(90deg,var(--primary),var(--electric));
+    border-radius:3px;
+    transition:all .3s ease;
+    transform:translateX(-50%);
   }
-  .nav-links a:hover{color:var(--green)}
+  .nav-links a:hover{color:var(--primary)}
   .nav-links a:hover::after{width:100%}
 
-  .nav-actions{display:flex;align-items:center;gap:8px}
+  .nav-actions{display:flex;align-items:center;gap:10px}
 
+  /* Lang toggle: pill with two segments */
   .lang-toggle{
-    display:flex;
+    display:inline-flex;
     align-items:center;
-    gap:6px;
-    padding:8px 14px;
-    border:1.5px solid var(--green);
+    padding:4px;
+    border:1.5px solid var(--primary);
     border-radius:999px;
-    font-weight:600;
-    font-size:0.85rem;
-    color:var(--green);
-    background:transparent;
-    transition:all .2s;
-    white-space:nowrap;
+    background:#fff;
+    overflow:hidden;
   }
-  .lang-toggle:hover{background:var(--green);color:#fff}
-  .lang-toggle svg{width:16px;height:16px}
+  .lang-toggle .lang-opt{
+    padding:6px 12px;
+    font-weight:700;
+    font-size:0.8rem;
+    color:var(--primary);
+    border-radius:999px;
+    transition:all .25s ease;
+    line-height:1;
+    min-width:42px;
+    text-align:center;
+  }
+  .lang-toggle .lang-opt.active{
+    background:linear-gradient(135deg,var(--primary),var(--primary-dark));
+    color:#fff;
+    box-shadow:0 4px 12px rgba(26,115,232,0.4);
+  }
+  body.lang-bn .lang-toggle .lang-opt.bn,
+  body.lang-en .lang-toggle .lang-opt.en{font-family:'Poppins',sans-serif}
 
   .btn-whatsapp{
     display:inline-flex;
@@ -152,16 +173,16 @@
     background:var(--whatsapp);
     color:#fff;
     border-radius:999px;
-    font-weight:600;
+    font-weight:700;
     font-size:0.9rem;
-    box-shadow:0 6px 16px rgba(37,211,102,0.35);
-    transition:all .2s;
+    box-shadow:0 6px 16px rgba(37,211,102,0.4);
+    transition:all .25s;
     white-space:nowrap;
   }
   .btn-whatsapp:hover{
     background:var(--whatsapp-dark);
     transform:translateY(-2px);
-    box-shadow:0 10px 22px rgba(37,211,102,0.45);
+    box-shadow:0 10px 24px rgba(37,211,102,0.55);
   }
   .btn-whatsapp svg{width:18px;height:18px;fill:#fff}
   .btn-whatsapp .label-full{display:none}
@@ -176,7 +197,7 @@
   .menu-toggle span{
     display:block;
     width:22px;height:2.5px;
-    background:var(--green);
+    background:var(--primary);
     border-radius:2px;
     transition:all .3s;
   }
@@ -186,155 +207,171 @@
 
   .mobile-menu{
     position:fixed;
-    top:68px;left:0;right:0;
-    background:#fff;
-    padding:20px;
+    top:70px;left:0;right:0;
+    background:linear-gradient(135deg,var(--primary),var(--navy));
+    padding:24px 20px;
     display:flex;
     flex-direction:column;
-    gap:6px;
-    box-shadow:0 12px 30px rgba(0,0,0,0.12);
+    gap:8px;
+    box-shadow:0 16px 40px rgba(13,27,75,0.25);
     transform:translateY(-150%);
     transition:transform .35s ease;
     z-index:999;
   }
   .mobile-menu.open{transform:translateY(0)}
   .mobile-menu a{
-    padding:14px 12px;
-    border-radius:10px;
-    font-weight:500;
-    color:var(--text);
-    transition:background .2s;
+    padding:14px 16px;
+    border-radius:12px;
+    font-weight:600;
+    font-size:1rem;
+    color:#fff;
+    transition:all .2s;
+    background:rgba(255,255,255,0.08);
   }
-  .mobile-menu a:hover{background:rgba(26,107,60,0.08);color:var(--green)}
+  .mobile-menu a:hover{background:rgba(255,255,255,0.18);transform:translateX(4px)}
 
   /* ============ HERO ============ */
   .hero{
     position:relative;
-    padding:60px 0 80px;
+    min-height:100vh;
+    display:flex;
+    align-items:center;
+    padding:80px 0 60px;
     overflow:hidden;
     background:
-      radial-gradient(circle at 15% 20%, rgba(240,165,0,0.12), transparent 45%),
-      radial-gradient(circle at 85% 80%, rgba(26,107,60,0.18), transparent 50%),
-      linear-gradient(135deg, #fefaf0 0%, #f0f7f2 100%);
+      radial-gradient(circle at 15% 25%, rgba(79,195,247,0.25), transparent 50%),
+      radial-gradient(circle at 85% 80%, rgba(26,115,232,0.35), transparent 55%),
+      linear-gradient(135deg, var(--navy-deep) 0%, var(--navy) 45%, var(--primary) 100%);
+    color:#fff;
   }
   .hero::before{
     content:"";
     position:absolute;
-    top:-100px;right:-100px;
-    width:400px;height:400px;
-    background:radial-gradient(circle, rgba(240,165,0,0.25), transparent 70%);
-    border-radius:50%;
+    inset:0;
+    background-image:
+      radial-gradient(circle at 20% 30%, rgba(255,255,255,0.08) 0%, transparent 1px),
+      radial-gradient(circle at 70% 60%, rgba(255,255,255,0.08) 0%, transparent 1px),
+      radial-gradient(circle at 40% 80%, rgba(255,255,255,0.08) 0%, transparent 1px);
+    background-size:60px 60px,80px 80px,100px 100px;
+    opacity:.6;
     pointer-events:none;
   }
   .hero::after{
     content:"";
     position:absolute;
-    bottom:-150px;left:-150px;
-    width:500px;height:500px;
-    background:radial-gradient(circle, rgba(26,107,60,0.2), transparent 70%);
-    border-radius:50%;
+    bottom:-200px;left:50%;
+    transform:translateX(-50%);
+    width:900px;height:500px;
+    background:radial-gradient(ellipse, rgba(79,195,247,0.3), transparent 70%);
     pointer-events:none;
   }
   .hero-grid{
     display:grid;
-    gap:40px;
+    gap:50px;
     align-items:center;
     position:relative;
     z-index:1;
+    width:100%;
   }
   .hero-eyebrow{
     display:inline-flex;
     align-items:center;
     gap:8px;
     padding:8px 16px;
-    background:rgba(240,165,0,0.15);
-    color:var(--gold-dark);
+    background:rgba(79,195,247,0.18);
+    color:var(--electric);
     border-radius:999px;
     font-weight:600;
-    font-size:0.8rem;
-    margin-bottom:18px;
-    border:1px solid rgba(240,165,0,0.3);
+    font-size:0.82rem;
+    margin-bottom:22px;
+    border:1px solid rgba(79,195,247,0.4);
+    backdrop-filter:blur(8px);
   }
   .hero-eyebrow .dot{
     width:8px;height:8px;
-    background:var(--gold);
+    background:var(--electric);
     border-radius:50%;
     animation:pulse 2s infinite;
+    box-shadow:0 0 12px var(--electric);
   }
   @keyframes pulse{
     0%,100%{opacity:1;transform:scale(1)}
-    50%{opacity:.6;transform:scale(1.2)}
+    50%{opacity:.6;transform:scale(1.25)}
   }
   .hero h1{
-    font-size:clamp(2rem, 7vw, 3.4rem);
-    font-weight:800;
-    line-height:1.15;
-    color:var(--green-dark);
-    margin-bottom:18px;
-    letter-spacing:-1px;
+    font-size:clamp(2.2rem, 7.5vw, 4rem);
+    font-weight:900;
+    line-height:1.1;
+    color:#fff;
+    margin-bottom:22px;
+    letter-spacing:-1.5px;
+    text-shadow:0 4px 30px rgba(0,0,0,0.2);
   }
   .hero h1 .accent{
-    color:var(--gold);
+    background:linear-gradient(135deg,var(--electric),#fff);
+    -webkit-background-clip:text;
+    background-clip:text;
+    -webkit-text-fill-color:transparent;
     position:relative;
     display:inline-block;
   }
-  .hero h1 .accent::after{
-    content:"";
-    position:absolute;
-    left:0;right:0;bottom:4px;
-    height:10px;
-    background:rgba(240,165,0,0.25);
-    z-index:-1;
-    border-radius:4px;
-  }
-  body.lang-bn .hero h1{font-size:clamp(1.8rem, 6.5vw, 3rem);line-height:1.3}
+  body.lang-bn .hero h1{font-size:clamp(1.9rem, 6.5vw, 3.3rem);line-height:1.35}
   .hero p.lead{
-    font-size:clamp(1rem, 2.5vw, 1.15rem);
-    color:var(--muted);
-    margin-bottom:32px;
-    max-width:560px;
+    font-size:clamp(1rem, 2.2vw, 1.18rem);
+    color:rgba(255,255,255,0.85);
+    margin-bottom:34px;
+    max-width:580px;
   }
   .hero-cta{
     display:flex;
     flex-wrap:wrap;
     gap:14px;
-    margin-bottom:36px;
+    margin-bottom:42px;
   }
   .btn-primary{
     display:inline-flex;
     align-items:center;
     gap:10px;
-    padding:16px 28px;
+    padding:16px 30px;
     background:var(--whatsapp);
     color:#fff;
     border-radius:999px;
     font-weight:700;
     font-size:1rem;
-    box-shadow:0 10px 25px rgba(37,211,102,0.4);
+    box-shadow:
+      0 0 0 0 rgba(37,211,102,0.7),
+      0 12px 30px rgba(37,211,102,0.5);
     transition:all .25s;
+    position:relative;
+    animation:glowPulse 2.5s infinite;
+  }
+  @keyframes glowPulse{
+    0%,100%{box-shadow:0 0 0 0 rgba(37,211,102,0.7),0 12px 30px rgba(37,211,102,0.5)}
+    50%{box-shadow:0 0 0 14px rgba(37,211,102,0),0 12px 36px rgba(37,211,102,0.7)}
   }
   .btn-primary:hover{
     background:var(--whatsapp-dark);
     transform:translateY(-3px);
-    box-shadow:0 16px 35px rgba(37,211,102,0.5);
   }
   .btn-primary svg{width:22px;height:22px;fill:#fff}
   .btn-secondary{
     display:inline-flex;
     align-items:center;
     gap:10px;
-    padding:16px 28px;
-    background:#fff;
-    color:var(--green);
+    padding:16px 30px;
+    background:rgba(255,255,255,0.1);
+    color:#fff;
     border-radius:999px;
     font-weight:700;
     font-size:1rem;
-    border:2px solid var(--green);
+    border:2px solid rgba(255,255,255,0.5);
+    backdrop-filter:blur(8px);
     transition:all .25s;
   }
   .btn-secondary:hover{
-    background:var(--green);
-    color:#fff;
+    background:#fff;
+    color:var(--primary);
+    border-color:#fff;
     transform:translateY(-3px);
   }
 
@@ -342,37 +379,66 @@
     display:grid;
     grid-template-columns:repeat(3,1fr);
     gap:14px;
-    max-width:520px;
+    max-width:560px;
   }
   .stat{
-    background:rgba(255,255,255,0.7);
-    backdrop-filter:blur(8px);
-    border:1px solid var(--border);
+    background:rgba(255,255,255,0.08);
+    backdrop-filter:blur(12px);
+    border:1px solid rgba(255,255,255,0.18);
     border-radius:14px;
-    padding:14px;
+    padding:16px 12px;
     text-align:center;
+    transition:transform .3s ease;
   }
+  .stat:hover{transform:translateY(-4px);background:rgba(255,255,255,0.13)}
   .stat .num{
-    font-size:1.4rem;
+    font-size:1.5rem;
     font-weight:800;
-    color:var(--green);
+    background:linear-gradient(135deg,var(--electric),#fff);
+    -webkit-background-clip:text;
+    background-clip:text;
+    -webkit-text-fill-color:transparent;
     display:block;
   }
   .stat .label{
     font-size:0.75rem;
-    color:var(--muted);
+    color:rgba(255,255,255,0.75);
     font-weight:500;
   }
+
+  /* Trust badges in hero */
+  .hero-trust{
+    display:flex;
+    flex-wrap:wrap;
+    gap:10px;
+    margin-top:30px;
+  }
+  .hero-trust .chip{
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+    padding:8px 14px;
+    background:rgba(255,255,255,0.08);
+    border:1px solid rgba(255,255,255,0.18);
+    border-radius:999px;
+    font-size:0.82rem;
+    font-weight:500;
+    color:rgba(255,255,255,0.9);
+    backdrop-filter:blur(8px);
+  }
+  .hero-trust .chip svg{width:16px;height:16px;fill:var(--electric)}
 
   .hero-visual{
     position:relative;
     display:none;
   }
   .hero-card{
-    background:#fff;
+    background:rgba(255,255,255,0.08);
+    backdrop-filter:blur(14px);
+    border:1px solid rgba(255,255,255,0.18);
     border-radius:24px;
     padding:24px;
-    box-shadow:var(--shadow-lg);
+    box-shadow:0 30px 80px rgba(0,0,0,0.4);
     transform:rotate(-2deg);
     transition:transform .4s;
   }
@@ -380,94 +446,115 @@
   .hero-card-img{
     aspect-ratio:1;
     border-radius:18px;
-    background:linear-gradient(135deg,var(--green),var(--green-light));
+    background:linear-gradient(135deg,var(--primary),var(--electric));
     display:grid;place-items:center;
     color:#fff;
     font-size:5rem;
     margin-bottom:16px;
     position:relative;
     overflow:hidden;
+    box-shadow:0 16px 40px rgba(26,115,232,0.5);
   }
   .hero-card-img::before{
     content:"";
     position:absolute;
     top:-50%;left:-50%;
     width:200%;height:200%;
-    background:radial-gradient(circle, rgba(240,165,0,0.3), transparent 50%);
+    background:radial-gradient(circle, rgba(255,255,255,0.3), transparent 50%);
   }
   .hero-card-img span{position:relative;z-index:1}
   .hero-badge{
     position:absolute;
     top:-12px;right:-12px;
     padding:10px 18px;
-    background:var(--gold);
+    background:linear-gradient(135deg,var(--primary-dark),var(--primary));
     color:#fff;
     border-radius:999px;
     font-weight:700;
     font-size:0.85rem;
-    box-shadow:0 8px 20px rgba(240,165,0,0.5);
+    box-shadow:0 10px 24px rgba(21,101,192,0.6);
     transform:rotate(8deg);
     z-index:2;
   }
 
   /* ============ SECTION COMMONS ============ */
-  section{padding:70px 0;position:relative}
+  section{padding:80px 0;position:relative}
   .section-head{
     text-align:center;
     max-width:680px;
-    margin:0 auto 50px;
+    margin:0 auto 56px;
   }
   .section-tag{
     display:inline-block;
-    padding:6px 14px;
-    background:rgba(26,107,60,0.1);
-    color:var(--green);
+    padding:6px 16px;
+    background:rgba(26,115,232,0.1);
+    color:var(--primary);
     border-radius:999px;
     font-size:0.8rem;
-    font-weight:600;
-    margin-bottom:14px;
+    font-weight:700;
+    margin-bottom:16px;
     letter-spacing:0.5px;
     text-transform:uppercase;
   }
   body.lang-bn .section-tag{text-transform:none;letter-spacing:0}
   .section-head h2{
-    font-size:clamp(1.7rem, 5vw, 2.5rem);
+    font-size:clamp(1.8rem, 5vw, 2.7rem);
     font-weight:800;
-    color:var(--green-dark);
+    color:var(--navy);
     line-height:1.2;
-    margin-bottom:14px;
-    letter-spacing:-0.5px;
+    margin-bottom:18px;
+    letter-spacing:-0.8px;
+    position:relative;
+    display:inline-block;
   }
-  body.lang-bn .section-head h2{font-size:clamp(1.6rem, 4.5vw, 2.3rem);line-height:1.35}
-  .section-head p{color:var(--muted);font-size:1.02rem}
+  .section-head h2::after{
+    content:"";
+    position:absolute;
+    left:50%;bottom:-12px;
+    transform:translateX(-50%);
+    width:70px;height:4px;
+    background:linear-gradient(90deg,var(--primary),var(--electric));
+    border-radius:4px;
+  }
+  body.lang-bn .section-head h2{font-size:clamp(1.6rem, 4.5vw, 2.4rem);line-height:1.35}
+  .section-head p{color:var(--muted);font-size:1.05rem;margin-top:24px}
 
   /* ============ PRODUCTS ============ */
   #products{
-    background:linear-gradient(180deg,#fff 0%,var(--bg) 100%);
+    background:linear-gradient(180deg,#fff 0%,var(--bg-soft) 100%);
   }
   .product-grid{
     display:grid;
     grid-template-columns:repeat(auto-fill,minmax(260px,1fr));
-    gap:20px;
+    gap:24px;
   }
   .product-card{
-    background:var(--card);
+    background:#fff;
     border-radius:var(--radius);
     overflow:hidden;
     border:1px solid var(--border);
-    transition:all .3s ease;
+    box-shadow:var(--shadow-sm);
+    transition:all .35s cubic-bezier(.2,.8,.2,1);
     display:flex;
     flex-direction:column;
     position:relative;
   }
+  .product-card::before{
+    content:"";
+    position:absolute;
+    top:0;left:0;right:0;
+    height:4px;
+    background:linear-gradient(90deg,var(--primary),var(--electric));
+    z-index:2;
+  }
   .product-card:hover{
-    transform:translateY(-6px);
+    transform:translateY(-10px);
     box-shadow:var(--shadow-lg);
-    border-color:rgba(240,165,0,0.4);
+    border-color:rgba(26,115,232,0.35);
   }
   .product-image{
     aspect-ratio:1;
-    background:linear-gradient(135deg,#f0f7f2,#fefaf0);
+    background:linear-gradient(135deg,var(--bg-soft),#e3f0ff);
     position:relative;
     overflow:hidden;
     display:grid;
@@ -477,30 +564,31 @@
     content:"";
     position:absolute;
     inset:0;
-    background:radial-gradient(circle at 30% 30%, rgba(240,165,0,0.15), transparent 60%);
+    background:radial-gradient(circle at 30% 30%, rgba(79,195,247,0.25), transparent 60%);
   }
   .product-emoji{
-    font-size:4.5rem;
+    font-size:4.8rem;
     position:relative;
     z-index:1;
     transition:transform .4s ease;
-    filter:drop-shadow(0 6px 12px rgba(0,0,0,0.1));
+    filter:drop-shadow(0 8px 16px rgba(13,27,75,0.18));
   }
-  .product-card:hover .product-emoji{transform:scale(1.15) rotate(-5deg)}
+  .product-card:hover .product-emoji{transform:scale(1.18) rotate(-5deg)}
   .product-tag{
     position:absolute;
-    top:12px;left:12px;
-    padding:5px 11px;
-    background:var(--gold);
+    top:14px;left:14px;
+    padding:5px 12px;
+    background:linear-gradient(135deg,var(--primary),var(--electric));
     color:#fff;
     border-radius:999px;
     font-size:0.7rem;
     font-weight:700;
     z-index:2;
     letter-spacing:0.5px;
+    box-shadow:0 4px 12px rgba(26,115,232,0.4);
   }
   .product-body{
-    padding:18px;
+    padding:20px;
     display:flex;
     flex-direction:column;
     flex:1;
@@ -508,14 +596,14 @@
   .product-body h3{
     font-size:1.05rem;
     font-weight:700;
-    color:var(--text);
+    color:var(--navy);
     margin-bottom:8px;
     line-height:1.35;
   }
   .product-body p{
     font-size:0.88rem;
     color:var(--muted);
-    margin-bottom:16px;
+    margin-bottom:18px;
     flex:1;
   }
   .product-order{
@@ -523,132 +611,25 @@
     align-items:center;
     justify-content:center;
     gap:8px;
-    padding:11px 16px;
-    background:var(--whatsapp);
+    padding:12px 16px;
+    background:linear-gradient(135deg,var(--primary),var(--primary-dark));
     color:#fff;
-    border-radius:10px;
-    font-weight:600;
-    font-size:0.88rem;
-    transition:all .2s;
+    border-radius:12px;
+    font-weight:700;
+    font-size:0.9rem;
+    transition:all .25s;
     width:100%;
+    box-shadow:0 6px 16px rgba(26,115,232,0.3);
   }
   .product-order:hover{
-    background:var(--whatsapp-dark);
-    transform:scale(1.02);
+    transform:translateY(-2px);
+    box-shadow:0 10px 24px rgba(26,115,232,0.45);
   }
   .product-order svg{width:16px;height:16px;fill:#fff}
 
-  /* ============ ABOUT/TEAM ============ */
-  #about{
-    background:#fff;
-    position:relative;
-  }
-  #about::before{
-    content:"";
-    position:absolute;
-    top:0;left:50%;
-    transform:translateX(-50%);
-    width:80%;height:1px;
-    background:linear-gradient(90deg,transparent,var(--border),transparent);
-  }
-  .team-grid{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
-    gap:24px;
-  }
-  .team-card{
-    background:linear-gradient(180deg,#fff,#fafaf7);
-    border:1px solid var(--border);
-    border-radius:var(--radius);
-    padding:30px 22px;
-    text-align:center;
-    transition:all .3s ease;
-    position:relative;
-    overflow:hidden;
-  }
-  .team-card::before{
-    content:"";
-    position:absolute;
-    top:0;left:0;right:0;
-    height:80px;
-    background:linear-gradient(135deg,var(--green),var(--green-light));
-  }
-  .team-card::after{
-    content:"";
-    position:absolute;
-    top:80px;left:0;right:0;
-    height:60px;
-    background:radial-gradient(ellipse at top, rgba(240,165,0,0.15), transparent 70%);
-  }
-  .team-card:hover{
-    transform:translateY(-6px);
-    box-shadow:var(--shadow-lg);
-  }
-  .team-avatar{
-    width:110px;height:110px;
-    border-radius:50%;
-    margin:30px auto 18px;
-    position:relative;
-    z-index:1;
-    background:linear-gradient(135deg,var(--gold),var(--gold-light));
-    border:4px solid #fff;
-    box-shadow:0 8px 24px rgba(15,74,40,0.2);
-    display:grid;place-items:center;
-    color:#fff;
-    font-size:2.5rem;
-    font-weight:800;
-    overflow:hidden;
-  }
-  .team-name{
-    font-size:1.15rem;
-    font-weight:700;
-    color:var(--text);
-    margin-bottom:4px;
-    position:relative;z-index:1;
-  }
-  .team-role{
-    display:inline-block;
-    padding:4px 12px;
-    background:rgba(26,107,60,0.1);
-    color:var(--green);
-    border-radius:999px;
-    font-size:0.78rem;
-    font-weight:600;
-    margin-bottom:14px;
-    position:relative;z-index:1;
-  }
-  .team-bio{
-    font-size:0.88rem;
-    color:var(--muted);
-    line-height:1.6;
-    position:relative;z-index:1;
-  }
-
-  .trust-badges{
-    display:flex;
-    flex-wrap:wrap;
-    justify-content:center;
-    gap:16px;
-    margin-top:60px;
-    padding-top:40px;
-    border-top:1px solid var(--border);
-  }
-  .trust-badge{
-    display:flex;
-    align-items:center;
-    gap:10px;
-    padding:12px 20px;
-    background:var(--bg);
-    border-radius:12px;
-    font-size:0.9rem;
-    font-weight:600;
-    color:var(--green-dark);
-  }
-  .trust-badge svg{width:22px;height:22px;fill:var(--gold)}
-
   /* ============ CONTACT ============ */
   #contact{
-    background:linear-gradient(135deg,var(--green-dark) 0%,var(--green) 100%);
+    background:linear-gradient(135deg,var(--navy-deep) 0%,var(--navy) 50%,var(--primary) 100%);
     color:#fff;
     position:relative;
     overflow:hidden;
@@ -658,11 +639,20 @@
     position:absolute;
     top:-200px;right:-200px;
     width:500px;height:500px;
-    background:radial-gradient(circle,rgba(240,165,0,0.2),transparent 70%);
+    background:radial-gradient(circle,rgba(79,195,247,0.3),transparent 70%);
     border-radius:50%;
   }
-  #contact .section-tag{background:rgba(240,165,0,0.2);color:var(--gold-light)}
+  #contact::after{
+    content:"";
+    position:absolute;
+    bottom:-150px;left:-150px;
+    width:400px;height:400px;
+    background:radial-gradient(circle,rgba(26,115,232,0.4),transparent 70%);
+    border-radius:50%;
+  }
+  #contact .section-tag{background:rgba(79,195,247,0.2);color:var(--electric)}
   #contact .section-head h2{color:#fff}
+  #contact .section-head h2::after{background:linear-gradient(90deg,var(--electric),#fff)}
   #contact .section-head p{color:rgba(255,255,255,0.85)}
 
   .contact-grid{
@@ -676,10 +666,10 @@
   }
   .contact-card{
     background:rgba(255,255,255,0.08);
-    backdrop-filter:blur(10px);
-    border:1px solid rgba(255,255,255,0.15);
+    backdrop-filter:blur(12px);
+    border:1px solid rgba(255,255,255,0.18);
     border-radius:var(--radius);
-    padding:28px 22px;
+    padding:30px 22px;
     text-align:center;
     transition:all .3s;
     display:flex;
@@ -688,25 +678,26 @@
     gap:6px;
   }
   .contact-card:hover{
-    background:rgba(255,255,255,0.13);
-    transform:translateY(-4px);
-    border-color:var(--gold);
+    background:rgba(255,255,255,0.14);
+    transform:translateY(-6px);
+    border-color:var(--electric);
+    box-shadow:0 20px 40px rgba(0,0,0,0.25);
   }
   .contact-icon{
-    width:60px;height:60px;
+    width:64px;height:64px;
     border-radius:50%;
-    background:linear-gradient(135deg,var(--gold),var(--gold-dark));
+    background:linear-gradient(135deg,var(--electric),var(--primary));
     display:grid;place-items:center;
-    margin-bottom:8px;
-    box-shadow:0 8px 20px rgba(240,165,0,0.4);
+    margin-bottom:10px;
+    box-shadow:0 10px 24px rgba(79,195,247,0.4);
   }
-  .contact-icon svg{width:28px;height:28px;fill:#fff}
+  .contact-icon svg{width:30px;height:30px;fill:#fff}
   .contact-card h4{
     font-size:0.85rem;
-    font-weight:500;
+    font-weight:600;
     color:rgba(255,255,255,0.7);
     text-transform:uppercase;
-    letter-spacing:1px;
+    letter-spacing:1.2px;
   }
   body.lang-bn .contact-card h4{text-transform:none;letter-spacing:0}
   .contact-card a,.contact-card .val{
@@ -715,38 +706,48 @@
     color:#fff;
     word-break:break-word;
   }
-  .contact-card a:hover{color:var(--gold-light)}
+  .contact-card a:hover{color:var(--electric)}
 
   /* ============ FOOTER ============ */
   footer{
-    background:#0a2818;
+    background:var(--navy-deep);
     color:rgba(255,255,255,0.75);
-    padding:50px 0 24px;
+    padding:60px 0 24px;
   }
   .footer-grid{
     display:grid;
     grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-    gap:32px;
-    margin-bottom:36px;
+    gap:36px;
+    margin-bottom:40px;
   }
-  .footer-brand .logo{color:#fff;margin-bottom:12px}
-  .footer-brand .logo .bd{color:var(--gold)}
+  .footer-brand .logo{color:#fff;margin-bottom:14px}
+  .footer-brand .logo .bd{color:var(--electric)}
   .footer-brand p{font-size:0.92rem;line-height:1.7;max-width:340px}
   .footer-col h5{
     color:#fff;
     font-size:1rem;
     font-weight:700;
-    margin-bottom:16px;
+    margin-bottom:18px;
+    position:relative;
+    padding-bottom:10px;
   }
-  .footer-col ul{list-style:none;display:flex;flex-direction:column;gap:10px}
+  .footer-col h5::after{
+    content:"";
+    position:absolute;
+    left:0;bottom:0;
+    width:32px;height:3px;
+    background:linear-gradient(90deg,var(--primary),var(--electric));
+    border-radius:3px;
+  }
+  .footer-col ul{list-style:none;display:flex;flex-direction:column;gap:11px}
   .footer-col a{
     font-size:0.92rem;
-    transition:color .2s;
+    transition:all .2s;
     display:inline-flex;
     align-items:center;
     gap:8px;
   }
-  .footer-col a:hover{color:var(--gold-light)}
+  .footer-col a:hover{color:var(--electric);transform:translateX(3px)}
   .footer-col a svg{width:16px;height:16px;fill:currentColor}
   .footer-bottom{
     border-top:1px solid rgba(255,255,255,0.1);
@@ -758,7 +759,7 @@
     font-size:0.85rem;
     color:rgba(255,255,255,0.55);
   }
-  .footer-bottom .made{color:var(--gold-light)}
+  .footer-bottom .made{color:var(--electric)}
 
   /* ============ FLOATING WHATSAPP ============ */
   .float-whatsapp{
@@ -778,14 +779,14 @@
   .float-whatsapp svg{width:30px;height:30px;fill:#fff}
   @keyframes floatPulse{
     0%,100%{box-shadow:0 10px 28px rgba(37,211,102,0.5)}
-    50%{box-shadow:0 10px 28px rgba(37,211,102,0.5),0 0 0 12px rgba(37,211,102,0.15)}
+    50%{box-shadow:0 10px 28px rgba(37,211,102,0.5),0 0 0 14px rgba(37,211,102,0.15)}
   }
 
   /* ============ REVEAL ANIMATION ============ */
   .reveal{
     opacity:0;
-    transform:translateY(30px);
-    transition:opacity .7s ease, transform .7s ease;
+    transform:translateY(40px);
+    transition:opacity .8s ease, transform .8s ease;
   }
   .reveal.visible{opacity:1;transform:translateY(0)}
 
@@ -793,20 +794,19 @@
   @media (min-width: 640px){
     .btn-whatsapp .label-full{display:inline}
     .hero-stats{gap:16px}
-    .stat .num{font-size:1.6rem}
+    .stat .num{font-size:1.7rem}
   }
   @media (min-width: 860px){
     .nav-links{display:flex}
     .menu-toggle{display:none}
     .mobile-menu{display:none !important}
-    .hero{padding:90px 0 110px}
-    .hero-grid{grid-template-columns:1.1fr 1fr;gap:60px}
+    .hero{padding:60px 0 100px}
+    .hero-grid{grid-template-columns:1.15fr 1fr;gap:60px}
     .hero-visual{display:block}
-    section{padding:90px 0}
+    section{padding:100px 0}
   }
   @media (min-width: 1024px){
     .product-grid{grid-template-columns:repeat(4,1fr)}
-    .team-grid{grid-template-columns:repeat(4,1fr)}
   }
 </style>
 </head>
@@ -822,16 +822,15 @@
 
     <nav class="nav-links" aria-label="Primary">
       <a href="#products" data-en="Products" data-bn="পণ্যসমূহ">Products</a>
-      <a href="#about" data-en="About" data-bn="আমাদের সম্পর্কে">About</a>
       <a href="#contact" data-en="Contact" data-bn="যোগাযোগ">Contact</a>
     </nav>
 
     <div class="nav-actions">
-      <button class="lang-toggle" id="langToggle" aria-label="Toggle language">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a14 14 0 010 18M12 3a14 14 0 000 18"/></svg>
-        <span id="langLabel">বাংলা</span>
-      </button>
-      <a href="https://wa.me/8801XXXXXXXXX" class="btn-whatsapp" target="_blank" rel="noopener">
+      <div class="lang-toggle" id="langToggle" role="group" aria-label="Language toggle">
+        <button class="lang-opt en active" data-lang="en" type="button" aria-label="English">EN</button>
+        <button class="lang-opt bn" data-lang="bn" type="button" aria-label="Bengali">বাং</button>
+      </div>
+      <a href="https://wa.me/8801333388489" class="btn-whatsapp" target="_blank" rel="noopener">
         <svg viewBox="0 0 24 24"><path d="M17.5 14.4c-.3-.2-1.7-.8-2-.9-.3-.1-.5-.2-.7.2-.2.3-.8.9-.9 1.1-.2.2-.3.2-.6.1-.3-.2-1.2-.5-2.3-1.4-.8-.7-1.4-1.6-1.6-1.9-.2-.3 0-.5.1-.6.1-.1.3-.3.4-.5.1-.2.2-.3.3-.5.1-.2 0-.4 0-.5 0-.1-.7-1.7-.9-2.3-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.2.2 2.2 3.3 5.3 4.6.7.3 1.3.5 1.7.6.7.2 1.4.2 1.9.1.6-.1 1.7-.7 1.9-1.4.2-.7.2-1.2.2-1.4-.1-.1-.3-.2-.6-.3M12 2a10 10 0 00-8.4 15.4L2 22l4.7-1.5A10 10 0 1012 2z"/></svg>
         <span data-en="Order" data-bn="অর্ডার">Order</span>
         <span class="label-full" data-en=" Now" data-bn=" করুন"> Now</span>
@@ -844,7 +843,6 @@
 
   <div class="mobile-menu" id="mobileMenu">
     <a href="#products" data-en="Products" data-bn="পণ্যসমূহ">Products</a>
-    <a href="#about" data-en="About Us" data-bn="আমাদের সম্পর্কে">About Us</a>
     <a href="#contact" data-en="Contact" data-bn="যোগাযোগ">Contact</a>
   </div>
 </header>
@@ -867,7 +865,7 @@
         Quantix BD brings you the best of imported gadgets, lifestyle gear, and everyday essentials — all curated, quality-checked, and delivered across Bangladesh. Order in seconds via WhatsApp.
       </p>
       <div class="hero-cta">
-        <a href="https://wa.me/8801XXXXXXXXX" class="btn-primary" target="_blank" rel="noopener">
+        <a href="https://wa.me/8801333388489" class="btn-primary" target="_blank" rel="noopener">
           <svg viewBox="0 0 24 24"><path d="M17.5 14.4c-.3-.2-1.7-.8-2-.9-.3-.1-.5-.2-.7.2-.2.3-.8.9-.9 1.1-.2.2-.3.2-.6.1-.3-.2-1.2-.5-2.3-1.4-.8-.7-1.4-1.6-1.6-1.9-.2-.3 0-.5.1-.6.1-.1.3-.3.4-.5.1-.2.2-.3.3-.5.1-.2 0-.4 0-.5 0-.1-.7-1.7-.9-2.3-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.2.2 2.2 3.3 5.3 4.6.7.3 1.3.5 1.7.6.7.2 1.4.2 1.9.1.6-.1 1.7-.7 1.9-1.4.2-.7.2-1.2.2-1.4-.1-.1-.3-.2-.6-.3M12 2a10 10 0 00-8.4 15.4L2 22l4.7-1.5A10 10 0 1012 2z"/></svg>
           <span data-en="Order on WhatsApp" data-bn="হোয়াটসঅ্যাপে অর্ডার করুন">Order on WhatsApp</span>
         </a>
@@ -890,6 +888,21 @@
           <span class="label" data-en="Quality Assured" data-bn="মান নিশ্চিত">Quality Assured</span>
         </div>
       </div>
+
+      <div class="hero-trust">
+        <div class="chip">
+          <svg viewBox="0 0 24 24"><path d="M12 2L4 5v6c0 5 3.5 9.7 8 11 4.5-1.3 8-6 8-11V5l-8-3zm-1 15l-4-4 1.4-1.4L11 14.2l5.6-5.6L18 10l-7 7z"/></svg>
+          <span data-en="100% Authentic" data-bn="১০০% অরিজিনাল">100% Authentic</span>
+        </div>
+        <div class="chip">
+          <svg viewBox="0 0 24 24"><path d="M20 8h-3V6a2 2 0 00-2-2H9a2 2 0 00-2 2v2H4v12h16V8zM9 6h6v2H9V6zm9 12H6V10h12v8z"/><path d="M11 12h2v4h-2z"/></svg>
+          <span data-en="Cash on Delivery" data-bn="ক্যাশ অন ডেলিভারি">Cash on Delivery</span>
+        </div>
+        <div class="chip">
+          <svg viewBox="0 0 24 24"><path d="M20 8h-3V4H3v13h2a3 3 0 006 0h4a3 3 0 006 0h2v-5l-3-4zM8 18a1.5 1.5 0 110-3 1.5 1.5 0 010 3zm10 0a1.5 1.5 0 110-3 1.5 1.5 0 010 3zm.5-6.5h-4V9.5h2.5l1.5 2z"/></svg>
+          <span data-en="Nationwide Delivery" data-bn="সারা দেশে ডেলিভারি">Nationwide Delivery</span>
+        </div>
+      </div>
     </div>
 
     <div class="hero-visual">
@@ -898,9 +911,9 @@
           <span>🛍️</span>
         </div>
         <div style="text-align:center">
-          <div style="font-weight:700;font-size:1.1rem;color:var(--green-dark);margin-bottom:4px"
+          <div style="font-weight:700;font-size:1.1rem;color:#fff;margin-bottom:4px"
                data-en="Fresh Stock Weekly" data-bn="সাপ্তাহিক নতুন স্টক">Fresh Stock Weekly</div>
-          <div style="font-size:0.88rem;color:var(--muted)"
+          <div style="font-size:0.88rem;color:rgba(255,255,255,0.75)"
                data-en="From Guangzhou to your door" data-bn="গুয়াংজু থেকে আপনার দরজায়">From Guangzhou to your door</div>
         </div>
         <div class="hero-badge" data-en="🚚 Cash on Delivery" data-bn="🚚 ক্যাশ অন ডেলিভারি">🚚 Cash on Delivery</div>
@@ -925,41 +938,6 @@
   </div>
 </section>
 
-<!-- ============ ABOUT / TEAM ============ -->
-<section id="about">
-  <div class="container">
-    <div class="section-head reveal">
-      <span class="section-tag" data-en="Meet The Team" data-bn="আমাদের টিম">Meet The Team</span>
-      <h2 data-en="The People Behind Quantix BD" data-bn="কোয়ান্টিক্স বিডির পেছনের মানুষেরা">The People Behind Quantix BD</h2>
-      <p data-en="A small, passionate team building Bangladesh's most trusted social commerce brand — one happy customer at a time."
-         data-bn="বাংলাদেশের সবচেয়ে বিশ্বস্ত সোশ্যাল কমার্স ব্র্যান্ড গড়ে তোলার পথে — একজন একজন সন্তুষ্ট গ্রাহকের মাধ্যমে।">
-        A small, passionate team building Bangladesh's most trusted social commerce brand — one happy customer at a time.
-      </p>
-    </div>
-
-    <div class="team-grid" id="teamGrid"></div>
-
-    <div class="trust-badges reveal">
-      <div class="trust-badge">
-        <svg viewBox="0 0 24 24"><path d="M12 2L4 5v6c0 5 3.5 9.7 8 11 4.5-1.3 8-6 8-11V5l-8-3zm-1 15l-4-4 1.4-1.4L11 14.2l5.6-5.6L18 10l-7 7z"/></svg>
-        <span data-en="100% Authentic" data-bn="১০০% অরিজিনাল">100% Authentic</span>
-      </div>
-      <div class="trust-badge">
-        <svg viewBox="0 0 24 24"><path d="M20 8h-3V6a2 2 0 00-2-2H9a2 2 0 00-2 2v2H4v12h16V8zM9 6h6v2H9V6zm9 12H6V10h12v8z"/><path d="M11 12h2v4h-2z"/></svg>
-        <span data-en="Cash on Delivery" data-bn="ক্যাশ অন ডেলিভারি">Cash on Delivery</span>
-      </div>
-      <div class="trust-badge">
-        <svg viewBox="0 0 24 24"><path d="M20 8h-3V4H3v13h2a3 3 0 006 0h4a3 3 0 006 0h2v-5l-3-4zM8 18a1.5 1.5 0 110-3 1.5 1.5 0 010 3zm10 0a1.5 1.5 0 110-3 1.5 1.5 0 010 3zm.5-6.5h-4V9.5h2.5l1.5 2z"/></svg>
-        <span data-en="Nationwide Delivery" data-bn="সারা দেশে ডেলিভারি">Nationwide Delivery</span>
-      </div>
-      <div class="trust-badge">
-        <svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 100 20 10 10 0 000-20zm1 15h-2v-2h2v2zm2.07-7.75l-.9.92C13.45 10.9 13 11.5 13 13h-2v-.5c0-1.1.45-2.1 1.17-2.83l1.24-1.26A1.98 1.98 0 0014 7c0-1.1-.9-2-2-2s-2 .9-2 2H8a4 4 0 118 0c0 .88-.36 1.68-.93 2.25z"/></svg>
-        <span data-en="24/7 Support" data-bn="২৪/৭ সাপোর্ট">24/7 Support</span>
-      </div>
-    </div>
-  </div>
-</section>
-
 <!-- ============ CONTACT ============ -->
 <section id="contact">
   <div class="container">
@@ -973,20 +951,20 @@
     </div>
 
     <div class="contact-grid">
-      <a href="https://wa.me/8801XXXXXXXXX" class="contact-card reveal" target="_blank" rel="noopener">
+      <a href="https://wa.me/8801333388489" class="contact-card reveal" target="_blank" rel="noopener">
         <div class="contact-icon">
           <svg viewBox="0 0 24 24"><path d="M17.5 14.4c-.3-.2-1.7-.8-2-.9-.3-.1-.5-.2-.7.2-.2.3-.8.9-.9 1.1-.2.2-.3.2-.6.1-.3-.2-1.2-.5-2.3-1.4-.8-.7-1.4-1.6-1.6-1.9-.2-.3 0-.5.1-.6.1-.1.3-.3.4-.5.1-.2.2-.3.3-.5.1-.2 0-.4 0-.5 0-.1-.7-1.7-.9-2.3-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.2.2 2.2 3.3 5.3 4.6.7.3 1.3.5 1.7.6.7.2 1.4.2 1.9.1.6-.1 1.7-.7 1.9-1.4.2-.7.2-1.2.2-1.4-.1-.1-.3-.2-.6-.3M12 2a10 10 0 00-8.4 15.4L2 22l4.7-1.5A10 10 0 1012 2z"/></svg>
         </div>
         <h4 data-en="WhatsApp" data-bn="হোয়াটসঅ্যাপ">WhatsApp</h4>
-        <span>+880 1XXX-XXXXXX</span>
+        <span>+8801333388489</span>
       </a>
 
-      <a href="https://facebook.com/quantixbd" class="contact-card reveal" target="_blank" rel="noopener">
+      <a href="https://www.facebook.com/quantixbangladesh" class="contact-card reveal" target="_blank" rel="noopener">
         <div class="contact-icon">
           <svg viewBox="0 0 24 24"><path d="M22 12a10 10 0 10-11.6 9.9v-7H7.9V12h2.5V9.8c0-2.5 1.5-3.9 3.8-3.9 1.1 0 2.2.2 2.2.2v2.5h-1.3c-1.2 0-1.6.8-1.6 1.6V12h2.8l-.4 2.9h-2.4v7A10 10 0 0022 12z"/></svg>
         </div>
         <h4 data-en="Facebook" data-bn="ফেসবুক">Facebook</h4>
-        <span>fb.com/quantixbd</span>
+        <span>fb.com/quantixbangladesh</span>
       </a>
 
       <a href="mailto:hello@quantixbd.com" class="contact-card reveal">
@@ -1019,7 +997,6 @@
         <h5 data-en="Quick Links" data-bn="দ্রুত লিংক">Quick Links</h5>
         <ul>
           <li><a href="#products" data-en="Products" data-bn="পণ্যসমূহ">Products</a></li>
-          <li><a href="#about" data-en="About Us" data-bn="আমাদের সম্পর্কে">About Us</a></li>
           <li><a href="#contact" data-en="Contact" data-bn="যোগাযোগ">Contact</a></li>
         </ul>
       </div>
@@ -1028,13 +1005,13 @@
         <h5 data-en="Connect" data-bn="যুক্ত হোন">Connect</h5>
         <ul>
           <li>
-            <a href="https://wa.me/8801XXXXXXXXX" target="_blank" rel="noopener">
+            <a href="https://wa.me/8801333388489" target="_blank" rel="noopener">
               <svg viewBox="0 0 24 24"><path d="M17.5 14.4c-.3-.2-1.7-.8-2-.9-.3-.1-.5-.2-.7.2-.2.3-.8.9-.9 1.1-.2.2-.3.2-.6.1-.3-.2-1.2-.5-2.3-1.4-.8-.7-1.4-1.6-1.6-1.9-.2-.3 0-.5.1-.6.1-.1.3-.3.4-.5.1-.2.2-.3.3-.5.1-.2 0-.4 0-.5 0-.1-.7-1.7-.9-2.3-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.2.2 2.2 3.3 5.3 4.6.7.3 1.3.5 1.7.6.7.2 1.4.2 1.9.1.6-.1 1.7-.7 1.9-1.4.2-.7.2-1.2.2-1.4-.1-.1-.3-.2-.6-.3M12 2a10 10 0 00-8.4 15.4L2 22l4.7-1.5A10 10 0 1012 2z"/></svg>
               <span data-en="WhatsApp Order" data-bn="হোয়াটসঅ্যাপ অর্ডার">WhatsApp Order</span>
             </a>
           </li>
           <li>
-            <a href="https://facebook.com/quantixbd" target="_blank" rel="noopener">
+            <a href="https://www.facebook.com/quantixbangladesh" target="_blank" rel="noopener">
               <svg viewBox="0 0 24 24"><path d="M22 12a10 10 0 10-11.6 9.9v-7H7.9V12h2.5V9.8c0-2.5 1.5-3.9 3.8-3.9 1.1 0 2.2.2 2.2.2v2.5h-1.3c-1.2 0-1.6.8-1.6 1.6V12h2.8l-.4 2.9h-2.4v7A10 10 0 0022 12z"/></svg>
               <span data-en="Facebook Page" data-bn="ফেসবুক পেজ">Facebook Page</span>
             </a>
@@ -1068,13 +1045,13 @@
 </footer>
 
 <!-- ============ FLOATING WHATSAPP ============ -->
-<a href="https://wa.me/8801XXXXXXXXX" class="float-whatsapp" target="_blank" rel="noopener" aria-label="Chat on WhatsApp">
+<a href="https://wa.me/8801333388489" class="float-whatsapp" target="_blank" rel="noopener" aria-label="Chat on WhatsApp">
   <svg viewBox="0 0 24 24"><path d="M17.5 14.4c-.3-.2-1.7-.8-2-.9-.3-.1-.5-.2-.7.2-.2.3-.8.9-.9 1.1-.2.2-.3.2-.6.1-.3-.2-1.2-.5-2.3-1.4-.8-.7-1.4-1.6-1.6-1.9-.2-.3 0-.5.1-.6.1-.1.3-.3.4-.5.1-.2.2-.3.3-.5.1-.2 0-.4 0-.5 0-.1-.7-1.7-.9-2.3-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.2.2 2.2 3.3 5.3 4.6.7.3 1.3.5 1.7.6.7.2 1.4.2 1.9.1.6-.1 1.7-.7 1.9-1.4.2-.7.2-1.2.2-1.4-.1-.1-.3-.2-.6-.3M12 2a10 10 0 00-8.4 15.4L2 22l4.7-1.5A10 10 0 1012 2z"/></svg>
 </a>
 
 <script>
   // ============ DATA ============
-  const WHATSAPP = "https://wa.me/8801XXXXXXXXX";
+  const WHATSAPP = "https://wa.me/8801333388489";
 
   const products = [
     {emoji:"🪥", tag:{en:"Hot",bn:"হট"}, en:{name:"Electronic Brush", desc:"Smart electric toothbrush for a brighter, healthier smile every day."}, bn:{name:"ইলেকট্রনিক ব্রাশ", desc:"উজ্জ্বল ও স্বাস্থ্যকর হাসির জন্য স্মার্ট ইলেকট্রিক টুথব্রাশ।"}},
@@ -1089,13 +1066,6 @@
     {emoji:"🌱", tag:null, en:{name:"3 PCS Mini Garden Tools", desc:"3-piece gardening set — perfect for balcony plants and home gardens."}, bn:{name:"৩ পিস মিনি গার্ডেন টুলস", desc:"৩-পিসের গার্ডেনিং সেট — ব্যালকনি ও বাড়ির বাগানের জন্য পারফেক্ট।"}},
     {emoji:"🐲", tag:{en:"Cute",bn:"কিউট"}, en:{name:"Cute Dragon Eye Stress Toy", desc:"Squeeze the dragon — eyes pop out for instant stress relief and giggles."}, bn:{name:"কিউট ড্রাগন আই স্ট্রেস টয়", desc:"চাপ দিন আর চোখ ফুটে উঠবে — স্ট্রেস রিলিফ ও মজার জন্য।"}},
     {emoji:"🐵", tag:{en:"Gift",bn:"গিফট"}, en:{name:"Cute Monkey LED Night Light", desc:"Adorable monkey-shaped LED lamp — soft glow for kids' rooms and gifts."}, bn:{name:"কিউট মাঙ্কি LED নাইট লাইট", desc:"মিষ্টি বাঁদর আকৃতির LED ল্যাম্প — বাচ্চাদের রুম ও গিফটের জন্য আদর্শ।"}}
-  ];
-
-  const team = [
-    {initial:"M", color1:"#1a6b3c", color2:"#2a8a52", en:{name:"Md. Rahman", role:"Founder & CEO", bio:"Leading Quantix BD's vision to bring trusted, affordable imports to every Bangladeshi home."}, bn:{name:"মোঃ রহমান", role:"প্রতিষ্ঠাতা ও সিইও", bio:"প্রতিটি বাংলাদেশি বাড়িতে বিশ্বস্ত ও সাশ্রয়ী পণ্য পৌঁছে দেওয়ার ভিশন নিয়ে নেতৃত্ব দিচ্ছেন।"}},
-    {initial:"A", color1:"#f0a500", color2:"#ffc24d", en:{name:"Ayesha Khan", role:"Operations Lead", bio:"Manages sourcing from Guangzhou to ensure every product meets our quality standards."}, bn:{name:"আয়েশা খান", role:"অপারেশনস লিড", bio:"গুয়াংজু থেকে সোর্সিং পরিচালনা করেন এবং প্রতিটি পণ্যের মান নিশ্চিত করেন।"}},
-    {initial:"T", color1:"#1a6b3c", color2:"#f0a500", en:{name:"Tanvir Ahmed", role:"Customer Care", bio:"Friendly voice on the other end of WhatsApp — making sure every order is a happy one."}, bn:{name:"তানভীর আহমেদ", role:"কাস্টমার কেয়ার", bio:"হোয়াটসঅ্যাপের অপর প্রান্তে বন্ধুসুলভ কণ্ঠস্বর — প্রতিটি অর্ডার আনন্দদায়ক করতে কাজ করেন।"}},
-    {initial:"S", color1:"#2a8a52", color2:"#ffc24d", en:{name:"Sadia Islam", role:"Marketing & Social", bio:"Crafting content and connecting with our Facebook community every single day."}, bn:{name:"সাদিয়া ইসলাম", role:"মার্কেটিং ও সোশ্যাল", bio:"প্রতিদিন কন্টেন্ট তৈরি ও আমাদের ফেসবুক কমিউনিটির সাথে যুক্ত থাকেন।"}}
   ];
 
   // ============ RENDER PRODUCTS ============
@@ -1126,37 +1096,29 @@
     productGrid.appendChild(card);
   });
 
-  // ============ RENDER TEAM ============
-  const teamGrid = document.getElementById('teamGrid');
-  team.forEach((m, i) => {
-    const card = document.createElement('div');
-    card.className = 'team-card reveal';
-    card.style.transitionDelay = `${i * 90}ms`;
-    card.innerHTML = `
-      <div class="team-avatar" style="background:linear-gradient(135deg,${m.color1},${m.color2})">${m.initial}</div>
-      <h3 class="team-name" data-en="${m.en.name}" data-bn="${m.bn.name}">${m.en.name}</h3>
-      <span class="team-role" data-en="${m.en.role}" data-bn="${m.bn.role}">${m.en.role}</span>
-      <p class="team-bio" data-en="${m.en.bio}" data-bn="${m.bn.bio}">${m.en.bio}</p>
-    `;
-    teamGrid.appendChild(card);
-  });
-
   // ============ LANGUAGE TOGGLE ============
   const body = document.body;
   const htmlEl = document.documentElement;
   const langToggle = document.getElementById('langToggle');
-  const langLabel = document.getElementById('langLabel');
+  const langOpts = langToggle.querySelectorAll('.lang-opt');
 
   function setLang(lang){
+    if (lang !== 'en' && lang !== 'bn') lang = 'en';
     body.classList.toggle('lang-en', lang === 'en');
     body.classList.toggle('lang-bn', lang === 'bn');
     htmlEl.lang = lang === 'bn' ? 'bn' : 'en';
-    langLabel.textContent = lang === 'en' ? 'বাংলা' : 'English';
+
+    langOpts.forEach(btn => {
+      btn.classList.toggle('active', btn.dataset.lang === lang);
+      btn.setAttribute('aria-pressed', btn.dataset.lang === lang ? 'true' : 'false');
+    });
+
     // Update product WhatsApp links with localized message
     document.querySelectorAll('.whatsapp-product').forEach(a => {
       const msg = lang === 'bn' ? a.dataset.msgBn : a.dataset.msgEn;
       a.href = `${WHATSAPP}?text=${msg}`;
     });
+
     try { localStorage.setItem('quantix-lang', lang); } catch(e){}
   }
 
@@ -1164,8 +1126,8 @@
   try { savedLang = localStorage.getItem('quantix-lang') || 'en'; } catch(e){}
   setLang(savedLang);
 
-  langToggle.addEventListener('click', () => {
-    setLang(body.classList.contains('lang-en') ? 'bn' : 'en');
+  langOpts.forEach(btn => {
+    btn.addEventListener('click', () => setLang(btn.dataset.lang));
   });
 
   // ============ MOBILE MENU ============
