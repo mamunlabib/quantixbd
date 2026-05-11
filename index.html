@@ -1,0 +1,1204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="description" content="Quantix BD - Premium imported products from China, delivered across Bangladesh. Order via WhatsApp." />
+<title>Quantix BD — Premium Imports, Delivered with Trust</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700&family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --green:#1a6b3c;
+    --green-dark:#0f4a28;
+    --green-light:#2a8a52;
+    --gold:#f0a500;
+    --gold-dark:#c98700;
+    --gold-light:#ffc24d;
+    --whatsapp:#25d366;
+    --whatsapp-dark:#128c7e;
+    --bg:#fafaf7;
+    --card:#ffffff;
+    --text:#1f2a24;
+    --muted:#5a6661;
+    --border:rgba(26,107,60,0.12);
+    --shadow:0 10px 30px rgba(15,74,40,0.10);
+    --shadow-lg:0 20px 50px rgba(15,74,40,0.18);
+    --radius:18px;
+  }
+
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+  body{
+    font-family:'Poppins','Hind Siliguri',sans-serif;
+    background:var(--bg);
+    color:var(--text);
+    line-height:1.6;
+    overflow-x:hidden;
+  }
+  body.lang-bn{font-family:'Hind Siliguri','Poppins',sans-serif}
+  body.lang-bn h1,body.lang-bn h2,body.lang-bn h3,body.lang-bn h4{font-family:'Hind Siliguri',sans-serif;letter-spacing:0}
+
+  img{max-width:100%;display:block}
+  a{color:inherit;text-decoration:none}
+  button{font-family:inherit;cursor:pointer;border:none;background:none}
+
+  .container{
+    width:100%;
+    max-width:1200px;
+    margin:0 auto;
+    padding:0 20px;
+  }
+
+  /* Language visibility */
+  [data-en],[data-bn]{transition:opacity .2s ease}
+  body.lang-en [data-bn]{display:none}
+  body.lang-bn [data-en]{display:none}
+
+  /* ============ HEADER ============ */
+  header{
+    position:sticky;
+    top:0;
+    z-index:1000;
+    background:rgba(255,255,255,0.92);
+    backdrop-filter:blur(12px);
+    -webkit-backdrop-filter:blur(12px);
+    border-bottom:1px solid var(--border);
+    transition:box-shadow .3s ease;
+  }
+  header.scrolled{box-shadow:0 6px 24px rgba(0,0,0,0.06)}
+  .nav{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:14px 0;
+    gap:12px;
+  }
+  .logo{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    font-weight:800;
+    font-size:1.35rem;
+    color:var(--green);
+    letter-spacing:-0.3px;
+  }
+  .logo-mark{
+    width:38px;height:38px;
+    border-radius:10px;
+    background:linear-gradient(135deg,var(--green),var(--green-light));
+    display:grid;place-items:center;
+    color:#fff;font-weight:800;font-size:1rem;
+    box-shadow:0 6px 14px rgba(26,107,60,0.3);
+    position:relative;
+    overflow:hidden;
+  }
+  .logo-mark::after{
+    content:"";
+    position:absolute;inset:0;
+    background:linear-gradient(135deg,transparent 40%,var(--gold) 41%,var(--gold) 50%,transparent 51%);
+    opacity:.55;
+  }
+  .logo span.bd{color:var(--gold)}
+
+  .nav-links{
+    display:none;
+    gap:28px;
+    align-items:center;
+  }
+  .nav-links a{
+    font-weight:500;
+    font-size:0.95rem;
+    color:var(--text);
+    position:relative;
+    padding:6px 0;
+    transition:color .2s;
+  }
+  .nav-links a::after{
+    content:"";
+    position:absolute;left:0;bottom:0;
+    width:0;height:2px;
+    background:var(--gold);
+    transition:width .3s ease;
+  }
+  .nav-links a:hover{color:var(--green)}
+  .nav-links a:hover::after{width:100%}
+
+  .nav-actions{display:flex;align-items:center;gap:8px}
+
+  .lang-toggle{
+    display:flex;
+    align-items:center;
+    gap:6px;
+    padding:8px 14px;
+    border:1.5px solid var(--green);
+    border-radius:999px;
+    font-weight:600;
+    font-size:0.85rem;
+    color:var(--green);
+    background:transparent;
+    transition:all .2s;
+    white-space:nowrap;
+  }
+  .lang-toggle:hover{background:var(--green);color:#fff}
+  .lang-toggle svg{width:16px;height:16px}
+
+  .btn-whatsapp{
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+    padding:10px 18px;
+    background:var(--whatsapp);
+    color:#fff;
+    border-radius:999px;
+    font-weight:600;
+    font-size:0.9rem;
+    box-shadow:0 6px 16px rgba(37,211,102,0.35);
+    transition:all .2s;
+    white-space:nowrap;
+  }
+  .btn-whatsapp:hover{
+    background:var(--whatsapp-dark);
+    transform:translateY(-2px);
+    box-shadow:0 10px 22px rgba(37,211,102,0.45);
+  }
+  .btn-whatsapp svg{width:18px;height:18px;fill:#fff}
+  .btn-whatsapp .label-full{display:none}
+
+  .menu-toggle{
+    display:flex;
+    flex-direction:column;
+    gap:5px;
+    padding:8px;
+    border-radius:8px;
+  }
+  .menu-toggle span{
+    display:block;
+    width:22px;height:2.5px;
+    background:var(--green);
+    border-radius:2px;
+    transition:all .3s;
+  }
+  .menu-toggle.active span:nth-child(1){transform:translateY(7.5px) rotate(45deg)}
+  .menu-toggle.active span:nth-child(2){opacity:0}
+  .menu-toggle.active span:nth-child(3){transform:translateY(-7.5px) rotate(-45deg)}
+
+  .mobile-menu{
+    position:fixed;
+    top:68px;left:0;right:0;
+    background:#fff;
+    padding:20px;
+    display:flex;
+    flex-direction:column;
+    gap:6px;
+    box-shadow:0 12px 30px rgba(0,0,0,0.12);
+    transform:translateY(-150%);
+    transition:transform .35s ease;
+    z-index:999;
+  }
+  .mobile-menu.open{transform:translateY(0)}
+  .mobile-menu a{
+    padding:14px 12px;
+    border-radius:10px;
+    font-weight:500;
+    color:var(--text);
+    transition:background .2s;
+  }
+  .mobile-menu a:hover{background:rgba(26,107,60,0.08);color:var(--green)}
+
+  /* ============ HERO ============ */
+  .hero{
+    position:relative;
+    padding:60px 0 80px;
+    overflow:hidden;
+    background:
+      radial-gradient(circle at 15% 20%, rgba(240,165,0,0.12), transparent 45%),
+      radial-gradient(circle at 85% 80%, rgba(26,107,60,0.18), transparent 50%),
+      linear-gradient(135deg, #fefaf0 0%, #f0f7f2 100%);
+  }
+  .hero::before{
+    content:"";
+    position:absolute;
+    top:-100px;right:-100px;
+    width:400px;height:400px;
+    background:radial-gradient(circle, rgba(240,165,0,0.25), transparent 70%);
+    border-radius:50%;
+    pointer-events:none;
+  }
+  .hero::after{
+    content:"";
+    position:absolute;
+    bottom:-150px;left:-150px;
+    width:500px;height:500px;
+    background:radial-gradient(circle, rgba(26,107,60,0.2), transparent 70%);
+    border-radius:50%;
+    pointer-events:none;
+  }
+  .hero-grid{
+    display:grid;
+    gap:40px;
+    align-items:center;
+    position:relative;
+    z-index:1;
+  }
+  .hero-eyebrow{
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+    padding:8px 16px;
+    background:rgba(240,165,0,0.15);
+    color:var(--gold-dark);
+    border-radius:999px;
+    font-weight:600;
+    font-size:0.8rem;
+    margin-bottom:18px;
+    border:1px solid rgba(240,165,0,0.3);
+  }
+  .hero-eyebrow .dot{
+    width:8px;height:8px;
+    background:var(--gold);
+    border-radius:50%;
+    animation:pulse 2s infinite;
+  }
+  @keyframes pulse{
+    0%,100%{opacity:1;transform:scale(1)}
+    50%{opacity:.6;transform:scale(1.2)}
+  }
+  .hero h1{
+    font-size:clamp(2rem, 7vw, 3.4rem);
+    font-weight:800;
+    line-height:1.15;
+    color:var(--green-dark);
+    margin-bottom:18px;
+    letter-spacing:-1px;
+  }
+  .hero h1 .accent{
+    color:var(--gold);
+    position:relative;
+    display:inline-block;
+  }
+  .hero h1 .accent::after{
+    content:"";
+    position:absolute;
+    left:0;right:0;bottom:4px;
+    height:10px;
+    background:rgba(240,165,0,0.25);
+    z-index:-1;
+    border-radius:4px;
+  }
+  body.lang-bn .hero h1{font-size:clamp(1.8rem, 6.5vw, 3rem);line-height:1.3}
+  .hero p.lead{
+    font-size:clamp(1rem, 2.5vw, 1.15rem);
+    color:var(--muted);
+    margin-bottom:32px;
+    max-width:560px;
+  }
+  .hero-cta{
+    display:flex;
+    flex-wrap:wrap;
+    gap:14px;
+    margin-bottom:36px;
+  }
+  .btn-primary{
+    display:inline-flex;
+    align-items:center;
+    gap:10px;
+    padding:16px 28px;
+    background:var(--whatsapp);
+    color:#fff;
+    border-radius:999px;
+    font-weight:700;
+    font-size:1rem;
+    box-shadow:0 10px 25px rgba(37,211,102,0.4);
+    transition:all .25s;
+  }
+  .btn-primary:hover{
+    background:var(--whatsapp-dark);
+    transform:translateY(-3px);
+    box-shadow:0 16px 35px rgba(37,211,102,0.5);
+  }
+  .btn-primary svg{width:22px;height:22px;fill:#fff}
+  .btn-secondary{
+    display:inline-flex;
+    align-items:center;
+    gap:10px;
+    padding:16px 28px;
+    background:#fff;
+    color:var(--green);
+    border-radius:999px;
+    font-weight:700;
+    font-size:1rem;
+    border:2px solid var(--green);
+    transition:all .25s;
+  }
+  .btn-secondary:hover{
+    background:var(--green);
+    color:#fff;
+    transform:translateY(-3px);
+  }
+
+  .hero-stats{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:14px;
+    max-width:520px;
+  }
+  .stat{
+    background:rgba(255,255,255,0.7);
+    backdrop-filter:blur(8px);
+    border:1px solid var(--border);
+    border-radius:14px;
+    padding:14px;
+    text-align:center;
+  }
+  .stat .num{
+    font-size:1.4rem;
+    font-weight:800;
+    color:var(--green);
+    display:block;
+  }
+  .stat .label{
+    font-size:0.75rem;
+    color:var(--muted);
+    font-weight:500;
+  }
+
+  .hero-visual{
+    position:relative;
+    display:none;
+  }
+  .hero-card{
+    background:#fff;
+    border-radius:24px;
+    padding:24px;
+    box-shadow:var(--shadow-lg);
+    transform:rotate(-2deg);
+    transition:transform .4s;
+  }
+  .hero-card:hover{transform:rotate(0) scale(1.02)}
+  .hero-card-img{
+    aspect-ratio:1;
+    border-radius:18px;
+    background:linear-gradient(135deg,var(--green),var(--green-light));
+    display:grid;place-items:center;
+    color:#fff;
+    font-size:5rem;
+    margin-bottom:16px;
+    position:relative;
+    overflow:hidden;
+  }
+  .hero-card-img::before{
+    content:"";
+    position:absolute;
+    top:-50%;left:-50%;
+    width:200%;height:200%;
+    background:radial-gradient(circle, rgba(240,165,0,0.3), transparent 50%);
+  }
+  .hero-card-img span{position:relative;z-index:1}
+  .hero-badge{
+    position:absolute;
+    top:-12px;right:-12px;
+    padding:10px 18px;
+    background:var(--gold);
+    color:#fff;
+    border-radius:999px;
+    font-weight:700;
+    font-size:0.85rem;
+    box-shadow:0 8px 20px rgba(240,165,0,0.5);
+    transform:rotate(8deg);
+    z-index:2;
+  }
+
+  /* ============ SECTION COMMONS ============ */
+  section{padding:70px 0;position:relative}
+  .section-head{
+    text-align:center;
+    max-width:680px;
+    margin:0 auto 50px;
+  }
+  .section-tag{
+    display:inline-block;
+    padding:6px 14px;
+    background:rgba(26,107,60,0.1);
+    color:var(--green);
+    border-radius:999px;
+    font-size:0.8rem;
+    font-weight:600;
+    margin-bottom:14px;
+    letter-spacing:0.5px;
+    text-transform:uppercase;
+  }
+  body.lang-bn .section-tag{text-transform:none;letter-spacing:0}
+  .section-head h2{
+    font-size:clamp(1.7rem, 5vw, 2.5rem);
+    font-weight:800;
+    color:var(--green-dark);
+    line-height:1.2;
+    margin-bottom:14px;
+    letter-spacing:-0.5px;
+  }
+  body.lang-bn .section-head h2{font-size:clamp(1.6rem, 4.5vw, 2.3rem);line-height:1.35}
+  .section-head p{color:var(--muted);font-size:1.02rem}
+
+  /* ============ PRODUCTS ============ */
+  #products{
+    background:linear-gradient(180deg,#fff 0%,var(--bg) 100%);
+  }
+  .product-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fill,minmax(260px,1fr));
+    gap:20px;
+  }
+  .product-card{
+    background:var(--card);
+    border-radius:var(--radius);
+    overflow:hidden;
+    border:1px solid var(--border);
+    transition:all .3s ease;
+    display:flex;
+    flex-direction:column;
+    position:relative;
+  }
+  .product-card:hover{
+    transform:translateY(-6px);
+    box-shadow:var(--shadow-lg);
+    border-color:rgba(240,165,0,0.4);
+  }
+  .product-image{
+    aspect-ratio:1;
+    background:linear-gradient(135deg,#f0f7f2,#fefaf0);
+    position:relative;
+    overflow:hidden;
+    display:grid;
+    place-items:center;
+  }
+  .product-image::before{
+    content:"";
+    position:absolute;
+    inset:0;
+    background:radial-gradient(circle at 30% 30%, rgba(240,165,0,0.15), transparent 60%);
+  }
+  .product-emoji{
+    font-size:4.5rem;
+    position:relative;
+    z-index:1;
+    transition:transform .4s ease;
+    filter:drop-shadow(0 6px 12px rgba(0,0,0,0.1));
+  }
+  .product-card:hover .product-emoji{transform:scale(1.15) rotate(-5deg)}
+  .product-tag{
+    position:absolute;
+    top:12px;left:12px;
+    padding:5px 11px;
+    background:var(--gold);
+    color:#fff;
+    border-radius:999px;
+    font-size:0.7rem;
+    font-weight:700;
+    z-index:2;
+    letter-spacing:0.5px;
+  }
+  .product-body{
+    padding:18px;
+    display:flex;
+    flex-direction:column;
+    flex:1;
+  }
+  .product-body h3{
+    font-size:1.05rem;
+    font-weight:700;
+    color:var(--text);
+    margin-bottom:8px;
+    line-height:1.35;
+  }
+  .product-body p{
+    font-size:0.88rem;
+    color:var(--muted);
+    margin-bottom:16px;
+    flex:1;
+  }
+  .product-order{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    gap:8px;
+    padding:11px 16px;
+    background:var(--whatsapp);
+    color:#fff;
+    border-radius:10px;
+    font-weight:600;
+    font-size:0.88rem;
+    transition:all .2s;
+    width:100%;
+  }
+  .product-order:hover{
+    background:var(--whatsapp-dark);
+    transform:scale(1.02);
+  }
+  .product-order svg{width:16px;height:16px;fill:#fff}
+
+  /* ============ ABOUT/TEAM ============ */
+  #about{
+    background:#fff;
+    position:relative;
+  }
+  #about::before{
+    content:"";
+    position:absolute;
+    top:0;left:50%;
+    transform:translateX(-50%);
+    width:80%;height:1px;
+    background:linear-gradient(90deg,transparent,var(--border),transparent);
+  }
+  .team-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+    gap:24px;
+  }
+  .team-card{
+    background:linear-gradient(180deg,#fff,#fafaf7);
+    border:1px solid var(--border);
+    border-radius:var(--radius);
+    padding:30px 22px;
+    text-align:center;
+    transition:all .3s ease;
+    position:relative;
+    overflow:hidden;
+  }
+  .team-card::before{
+    content:"";
+    position:absolute;
+    top:0;left:0;right:0;
+    height:80px;
+    background:linear-gradient(135deg,var(--green),var(--green-light));
+  }
+  .team-card::after{
+    content:"";
+    position:absolute;
+    top:80px;left:0;right:0;
+    height:60px;
+    background:radial-gradient(ellipse at top, rgba(240,165,0,0.15), transparent 70%);
+  }
+  .team-card:hover{
+    transform:translateY(-6px);
+    box-shadow:var(--shadow-lg);
+  }
+  .team-avatar{
+    width:110px;height:110px;
+    border-radius:50%;
+    margin:30px auto 18px;
+    position:relative;
+    z-index:1;
+    background:linear-gradient(135deg,var(--gold),var(--gold-light));
+    border:4px solid #fff;
+    box-shadow:0 8px 24px rgba(15,74,40,0.2);
+    display:grid;place-items:center;
+    color:#fff;
+    font-size:2.5rem;
+    font-weight:800;
+    overflow:hidden;
+  }
+  .team-name{
+    font-size:1.15rem;
+    font-weight:700;
+    color:var(--text);
+    margin-bottom:4px;
+    position:relative;z-index:1;
+  }
+  .team-role{
+    display:inline-block;
+    padding:4px 12px;
+    background:rgba(26,107,60,0.1);
+    color:var(--green);
+    border-radius:999px;
+    font-size:0.78rem;
+    font-weight:600;
+    margin-bottom:14px;
+    position:relative;z-index:1;
+  }
+  .team-bio{
+    font-size:0.88rem;
+    color:var(--muted);
+    line-height:1.6;
+    position:relative;z-index:1;
+  }
+
+  .trust-badges{
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:center;
+    gap:16px;
+    margin-top:60px;
+    padding-top:40px;
+    border-top:1px solid var(--border);
+  }
+  .trust-badge{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    padding:12px 20px;
+    background:var(--bg);
+    border-radius:12px;
+    font-size:0.9rem;
+    font-weight:600;
+    color:var(--green-dark);
+  }
+  .trust-badge svg{width:22px;height:22px;fill:var(--gold)}
+
+  /* ============ CONTACT ============ */
+  #contact{
+    background:linear-gradient(135deg,var(--green-dark) 0%,var(--green) 100%);
+    color:#fff;
+    position:relative;
+    overflow:hidden;
+  }
+  #contact::before{
+    content:"";
+    position:absolute;
+    top:-200px;right:-200px;
+    width:500px;height:500px;
+    background:radial-gradient(circle,rgba(240,165,0,0.2),transparent 70%);
+    border-radius:50%;
+  }
+  #contact .section-tag{background:rgba(240,165,0,0.2);color:var(--gold-light)}
+  #contact .section-head h2{color:#fff}
+  #contact .section-head p{color:rgba(255,255,255,0.85)}
+
+  .contact-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+    gap:22px;
+    position:relative;
+    z-index:1;
+    max-width:900px;
+    margin:0 auto;
+  }
+  .contact-card{
+    background:rgba(255,255,255,0.08);
+    backdrop-filter:blur(10px);
+    border:1px solid rgba(255,255,255,0.15);
+    border-radius:var(--radius);
+    padding:28px 22px;
+    text-align:center;
+    transition:all .3s;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    gap:6px;
+  }
+  .contact-card:hover{
+    background:rgba(255,255,255,0.13);
+    transform:translateY(-4px);
+    border-color:var(--gold);
+  }
+  .contact-icon{
+    width:60px;height:60px;
+    border-radius:50%;
+    background:linear-gradient(135deg,var(--gold),var(--gold-dark));
+    display:grid;place-items:center;
+    margin-bottom:8px;
+    box-shadow:0 8px 20px rgba(240,165,0,0.4);
+  }
+  .contact-icon svg{width:28px;height:28px;fill:#fff}
+  .contact-card h4{
+    font-size:0.85rem;
+    font-weight:500;
+    color:rgba(255,255,255,0.7);
+    text-transform:uppercase;
+    letter-spacing:1px;
+  }
+  body.lang-bn .contact-card h4{text-transform:none;letter-spacing:0}
+  .contact-card a,.contact-card .val{
+    font-size:1.05rem;
+    font-weight:600;
+    color:#fff;
+    word-break:break-word;
+  }
+  .contact-card a:hover{color:var(--gold-light)}
+
+  /* ============ FOOTER ============ */
+  footer{
+    background:#0a2818;
+    color:rgba(255,255,255,0.75);
+    padding:50px 0 24px;
+  }
+  .footer-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:32px;
+    margin-bottom:36px;
+  }
+  .footer-brand .logo{color:#fff;margin-bottom:12px}
+  .footer-brand .logo .bd{color:var(--gold)}
+  .footer-brand p{font-size:0.92rem;line-height:1.7;max-width:340px}
+  .footer-col h5{
+    color:#fff;
+    font-size:1rem;
+    font-weight:700;
+    margin-bottom:16px;
+  }
+  .footer-col ul{list-style:none;display:flex;flex-direction:column;gap:10px}
+  .footer-col a{
+    font-size:0.92rem;
+    transition:color .2s;
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+  }
+  .footer-col a:hover{color:var(--gold-light)}
+  .footer-col a svg{width:16px;height:16px;fill:currentColor}
+  .footer-bottom{
+    border-top:1px solid rgba(255,255,255,0.1);
+    padding-top:24px;
+    display:flex;
+    justify-content:space-between;
+    flex-wrap:wrap;
+    gap:14px;
+    font-size:0.85rem;
+    color:rgba(255,255,255,0.55);
+  }
+  .footer-bottom .made{color:var(--gold-light)}
+
+  /* ============ FLOATING WHATSAPP ============ */
+  .float-whatsapp{
+    position:fixed;
+    bottom:22px;right:22px;
+    width:58px;height:58px;
+    background:var(--whatsapp);
+    color:#fff;
+    border-radius:50%;
+    display:grid;place-items:center;
+    box-shadow:0 10px 28px rgba(37,211,102,0.5);
+    z-index:999;
+    transition:all .25s;
+    animation:floatPulse 2.5s infinite;
+  }
+  .float-whatsapp:hover{transform:scale(1.1)}
+  .float-whatsapp svg{width:30px;height:30px;fill:#fff}
+  @keyframes floatPulse{
+    0%,100%{box-shadow:0 10px 28px rgba(37,211,102,0.5)}
+    50%{box-shadow:0 10px 28px rgba(37,211,102,0.5),0 0 0 12px rgba(37,211,102,0.15)}
+  }
+
+  /* ============ REVEAL ANIMATION ============ */
+  .reveal{
+    opacity:0;
+    transform:translateY(30px);
+    transition:opacity .7s ease, transform .7s ease;
+  }
+  .reveal.visible{opacity:1;transform:translateY(0)}
+
+  /* ============ RESPONSIVE ============ */
+  @media (min-width: 640px){
+    .btn-whatsapp .label-full{display:inline}
+    .hero-stats{gap:16px}
+    .stat .num{font-size:1.6rem}
+  }
+  @media (min-width: 860px){
+    .nav-links{display:flex}
+    .menu-toggle{display:none}
+    .mobile-menu{display:none !important}
+    .hero{padding:90px 0 110px}
+    .hero-grid{grid-template-columns:1.1fr 1fr;gap:60px}
+    .hero-visual{display:block}
+    section{padding:90px 0}
+  }
+  @media (min-width: 1024px){
+    .product-grid{grid-template-columns:repeat(4,1fr)}
+    .team-grid{grid-template-columns:repeat(4,1fr)}
+  }
+</style>
+</head>
+<body class="lang-en">
+
+<!-- ============ HEADER ============ -->
+<header id="top">
+  <div class="container nav">
+    <a href="#top" class="logo" aria-label="Quantix BD Home">
+      <span class="logo-mark">Q</span>
+      <span>Quantix <span class="bd">BD</span></span>
+    </a>
+
+    <nav class="nav-links" aria-label="Primary">
+      <a href="#products" data-en="Products" data-bn="পণ্যসমূহ">Products</a>
+      <a href="#about" data-en="About" data-bn="আমাদের সম্পর্কে">About</a>
+      <a href="#contact" data-en="Contact" data-bn="যোগাযোগ">Contact</a>
+    </nav>
+
+    <div class="nav-actions">
+      <button class="lang-toggle" id="langToggle" aria-label="Toggle language">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a14 14 0 010 18M12 3a14 14 0 000 18"/></svg>
+        <span id="langLabel">বাংলা</span>
+      </button>
+      <a href="https://wa.me/8801XXXXXXXXX" class="btn-whatsapp" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24"><path d="M17.5 14.4c-.3-.2-1.7-.8-2-.9-.3-.1-.5-.2-.7.2-.2.3-.8.9-.9 1.1-.2.2-.3.2-.6.1-.3-.2-1.2-.5-2.3-1.4-.8-.7-1.4-1.6-1.6-1.9-.2-.3 0-.5.1-.6.1-.1.3-.3.4-.5.1-.2.2-.3.3-.5.1-.2 0-.4 0-.5 0-.1-.7-1.7-.9-2.3-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.2.2 2.2 3.3 5.3 4.6.7.3 1.3.5 1.7.6.7.2 1.4.2 1.9.1.6-.1 1.7-.7 1.9-1.4.2-.7.2-1.2.2-1.4-.1-.1-.3-.2-.6-.3M12 2a10 10 0 00-8.4 15.4L2 22l4.7-1.5A10 10 0 1012 2z"/></svg>
+        <span data-en="Order" data-bn="অর্ডার">Order</span>
+        <span class="label-full" data-en=" Now" data-bn=" করুন"> Now</span>
+      </a>
+      <button class="menu-toggle" id="menuToggle" aria-label="Open menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="#products" data-en="Products" data-bn="পণ্যসমূহ">Products</a>
+    <a href="#about" data-en="About Us" data-bn="আমাদের সম্পর্কে">About Us</a>
+    <a href="#contact" data-en="Contact" data-bn="যোগাযোগ">Contact</a>
+  </div>
+</header>
+
+<!-- ============ HERO ============ -->
+<section class="hero">
+  <div class="container hero-grid">
+    <div class="hero-content">
+      <div class="hero-eyebrow">
+        <span class="dot"></span>
+        <span data-en="Premium Imports from China" data-bn="চীন থেকে প্রিমিয়াম পণ্য">Premium Imports from China</span>
+      </div>
+      <h1>
+        <span data-en="Discover Smart Products, " data-bn="স্মার্ট পণ্য আবিষ্কার করুন, ">Discover Smart Products, </span>
+        <span class="accent" data-en="Delivered with Trust" data-bn="বিশ্বাসে পৌঁছে দেওয়া">Delivered with Trust</span>
+      </h1>
+      <p class="lead"
+         data-en="Quantix BD brings you the best of imported gadgets, lifestyle gear, and everyday essentials — all curated, quality-checked, and delivered across Bangladesh. Order in seconds via WhatsApp."
+         data-bn="কোয়ান্টিক্স বিডি আপনাকে এনে দিচ্ছে চীন থেকে আমদানিকৃত সেরা গ্যাজেট, লাইফস্টাইল ও দৈনন্দিন প্রয়োজনীয় পণ্য — সব কিছু যাচাইকৃত মানসম্পন্ন এবং সারা বাংলাদেশে পৌঁছে দেওয়া হয়। হোয়াটসঅ্যাপে সেকেন্ডেই অর্ডার করুন।">
+        Quantix BD brings you the best of imported gadgets, lifestyle gear, and everyday essentials — all curated, quality-checked, and delivered across Bangladesh. Order in seconds via WhatsApp.
+      </p>
+      <div class="hero-cta">
+        <a href="https://wa.me/8801XXXXXXXXX" class="btn-primary" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24"><path d="M17.5 14.4c-.3-.2-1.7-.8-2-.9-.3-.1-.5-.2-.7.2-.2.3-.8.9-.9 1.1-.2.2-.3.2-.6.1-.3-.2-1.2-.5-2.3-1.4-.8-.7-1.4-1.6-1.6-1.9-.2-.3 0-.5.1-.6.1-.1.3-.3.4-.5.1-.2.2-.3.3-.5.1-.2 0-.4 0-.5 0-.1-.7-1.7-.9-2.3-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.2.2 2.2 3.3 5.3 4.6.7.3 1.3.5 1.7.6.7.2 1.4.2 1.9.1.6-.1 1.7-.7 1.9-1.4.2-.7.2-1.2.2-1.4-.1-.1-.3-.2-.6-.3M12 2a10 10 0 00-8.4 15.4L2 22l4.7-1.5A10 10 0 1012 2z"/></svg>
+          <span data-en="Order on WhatsApp" data-bn="হোয়াটসঅ্যাপে অর্ডার করুন">Order on WhatsApp</span>
+        </a>
+        <a href="#products" class="btn-secondary">
+          <span data-en="Browse Products" data-bn="পণ্য দেখুন">Browse Products</span>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+        </a>
+      </div>
+      <div class="hero-stats">
+        <div class="stat">
+          <span class="num">12+</span>
+          <span class="label" data-en="Curated Products" data-bn="বাছাই করা পণ্য">Curated Products</span>
+        </div>
+        <div class="stat">
+          <span class="num">64</span>
+          <span class="label" data-en="Districts Delivered" data-bn="জেলায় ডেলিভারি">Districts Delivered</span>
+        </div>
+        <div class="stat">
+          <span class="num">100%</span>
+          <span class="label" data-en="Quality Assured" data-bn="মান নিশ্চিত">Quality Assured</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="hero-visual">
+      <div class="hero-card">
+        <div class="hero-card-img">
+          <span>🛍️</span>
+        </div>
+        <div style="text-align:center">
+          <div style="font-weight:700;font-size:1.1rem;color:var(--green-dark);margin-bottom:4px"
+               data-en="Fresh Stock Weekly" data-bn="সাপ্তাহিক নতুন স্টক">Fresh Stock Weekly</div>
+          <div style="font-size:0.88rem;color:var(--muted)"
+               data-en="From Guangzhou to your door" data-bn="গুয়াংজু থেকে আপনার দরজায়">From Guangzhou to your door</div>
+        </div>
+        <div class="hero-badge" data-en="🚚 Cash on Delivery" data-bn="🚚 ক্যাশ অন ডেলিভারি">🚚 Cash on Delivery</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PRODUCTS ============ -->
+<section id="products">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="section-tag" data-en="Our Collection" data-bn="আমাদের কালেকশন">Our Collection</span>
+      <h2 data-en="Bestsellers You'll Love" data-bn="আপনার পছন্দের জনপ্রিয় পণ্য">Bestsellers You'll Love</h2>
+      <p data-en="Handpicked imported items at honest prices. Tap any product to order instantly on WhatsApp."
+         data-bn="সততার দামে হাতে বাছাই করা আমদানিকৃত পণ্য। যেকোনো পণ্যে ক্লিক করে হোয়াটসঅ্যাপে এখনই অর্ডার করুন।">
+        Handpicked imported items at honest prices. Tap any product to order instantly on WhatsApp.
+      </p>
+    </div>
+
+    <div class="product-grid" id="productGrid"></div>
+  </div>
+</section>
+
+<!-- ============ ABOUT / TEAM ============ -->
+<section id="about">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="section-tag" data-en="Meet The Team" data-bn="আমাদের টিম">Meet The Team</span>
+      <h2 data-en="The People Behind Quantix BD" data-bn="কোয়ান্টিক্স বিডির পেছনের মানুষেরা">The People Behind Quantix BD</h2>
+      <p data-en="A small, passionate team building Bangladesh's most trusted social commerce brand — one happy customer at a time."
+         data-bn="বাংলাদেশের সবচেয়ে বিশ্বস্ত সোশ্যাল কমার্স ব্র্যান্ড গড়ে তোলার পথে — একজন একজন সন্তুষ্ট গ্রাহকের মাধ্যমে।">
+        A small, passionate team building Bangladesh's most trusted social commerce brand — one happy customer at a time.
+      </p>
+    </div>
+
+    <div class="team-grid" id="teamGrid"></div>
+
+    <div class="trust-badges reveal">
+      <div class="trust-badge">
+        <svg viewBox="0 0 24 24"><path d="M12 2L4 5v6c0 5 3.5 9.7 8 11 4.5-1.3 8-6 8-11V5l-8-3zm-1 15l-4-4 1.4-1.4L11 14.2l5.6-5.6L18 10l-7 7z"/></svg>
+        <span data-en="100% Authentic" data-bn="১০০% অরিজিনাল">100% Authentic</span>
+      </div>
+      <div class="trust-badge">
+        <svg viewBox="0 0 24 24"><path d="M20 8h-3V6a2 2 0 00-2-2H9a2 2 0 00-2 2v2H4v12h16V8zM9 6h6v2H9V6zm9 12H6V10h12v8z"/><path d="M11 12h2v4h-2z"/></svg>
+        <span data-en="Cash on Delivery" data-bn="ক্যাশ অন ডেলিভারি">Cash on Delivery</span>
+      </div>
+      <div class="trust-badge">
+        <svg viewBox="0 0 24 24"><path d="M20 8h-3V4H3v13h2a3 3 0 006 0h4a3 3 0 006 0h2v-5l-3-4zM8 18a1.5 1.5 0 110-3 1.5 1.5 0 010 3zm10 0a1.5 1.5 0 110-3 1.5 1.5 0 010 3zm.5-6.5h-4V9.5h2.5l1.5 2z"/></svg>
+        <span data-en="Nationwide Delivery" data-bn="সারা দেশে ডেলিভারি">Nationwide Delivery</span>
+      </div>
+      <div class="trust-badge">
+        <svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 100 20 10 10 0 000-20zm1 15h-2v-2h2v2zm2.07-7.75l-.9.92C13.45 10.9 13 11.5 13 13h-2v-.5c0-1.1.45-2.1 1.17-2.83l1.24-1.26A1.98 1.98 0 0014 7c0-1.1-.9-2-2-2s-2 .9-2 2H8a4 4 0 118 0c0 .88-.36 1.68-.93 2.25z"/></svg>
+        <span data-en="24/7 Support" data-bn="২৪/৭ সাপোর্ট">24/7 Support</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CONTACT ============ -->
+<section id="contact">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="section-tag" data-en="Get In Touch" data-bn="যোগাযোগ করুন">Get In Touch</span>
+      <h2 data-en="Have a Question? We're Here." data-bn="কোনো প্রশ্ন আছে? আমরা আছি।">Have a Question? We're Here.</h2>
+      <p data-en="Reach out on WhatsApp for the fastest reply, or find us on Facebook for daily updates and offers."
+         data-bn="সবচেয়ে দ্রুত উত্তরের জন্য হোয়াটসঅ্যাপে যোগাযোগ করুন, অথবা ফেসবুকে আমাদের ফলো করুন প্রতিদিনের অফারের জন্য।">
+        Reach out on WhatsApp for the fastest reply, or find us on Facebook for daily updates and offers.
+      </p>
+    </div>
+
+    <div class="contact-grid">
+      <a href="https://wa.me/8801XXXXXXXXX" class="contact-card reveal" target="_blank" rel="noopener">
+        <div class="contact-icon">
+          <svg viewBox="0 0 24 24"><path d="M17.5 14.4c-.3-.2-1.7-.8-2-.9-.3-.1-.5-.2-.7.2-.2.3-.8.9-.9 1.1-.2.2-.3.2-.6.1-.3-.2-1.2-.5-2.3-1.4-.8-.7-1.4-1.6-1.6-1.9-.2-.3 0-.5.1-.6.1-.1.3-.3.4-.5.1-.2.2-.3.3-.5.1-.2 0-.4 0-.5 0-.1-.7-1.7-.9-2.3-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.2.2 2.2 3.3 5.3 4.6.7.3 1.3.5 1.7.6.7.2 1.4.2 1.9.1.6-.1 1.7-.7 1.9-1.4.2-.7.2-1.2.2-1.4-.1-.1-.3-.2-.6-.3M12 2a10 10 0 00-8.4 15.4L2 22l4.7-1.5A10 10 0 1012 2z"/></svg>
+        </div>
+        <h4 data-en="WhatsApp" data-bn="হোয়াটসঅ্যাপ">WhatsApp</h4>
+        <span>+880 1XXX-XXXXXX</span>
+      </a>
+
+      <a href="https://facebook.com/quantixbd" class="contact-card reveal" target="_blank" rel="noopener">
+        <div class="contact-icon">
+          <svg viewBox="0 0 24 24"><path d="M22 12a10 10 0 10-11.6 9.9v-7H7.9V12h2.5V9.8c0-2.5 1.5-3.9 3.8-3.9 1.1 0 2.2.2 2.2.2v2.5h-1.3c-1.2 0-1.6.8-1.6 1.6V12h2.8l-.4 2.9h-2.4v7A10 10 0 0022 12z"/></svg>
+        </div>
+        <h4 data-en="Facebook" data-bn="ফেসবুক">Facebook</h4>
+        <span>fb.com/quantixbd</span>
+      </a>
+
+      <a href="mailto:hello@quantixbd.com" class="contact-card reveal">
+        <div class="contact-icon">
+          <svg viewBox="0 0 24 24"><path d="M20 4H4a2 2 0 00-2 2v12a2 2 0 002 2h16a2 2 0 002-2V6a2 2 0 00-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+        </div>
+        <h4 data-en="Email" data-bn="ইমেইল">Email</h4>
+        <span>hello@quantixbd.com</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="logo">
+          <span class="logo-mark">Q</span>
+          <span>Quantix <span class="bd">BD</span></span>
+        </div>
+        <p data-en="Bringing the best of imported products to every corner of Bangladesh. Order via WhatsApp, pay on delivery."
+           data-bn="আমদানিকৃত সেরা পণ্য পৌঁছে দিচ্ছি বাংলাদেশের প্রতিটি কোণায়। হোয়াটসঅ্যাপে অর্ডার করুন, ডেলিভারিতে পেমেন্ট দিন।">
+          Bringing the best of imported products to every corner of Bangladesh. Order via WhatsApp, pay on delivery.
+        </p>
+      </div>
+
+      <div class="footer-col">
+        <h5 data-en="Quick Links" data-bn="দ্রুত লিংক">Quick Links</h5>
+        <ul>
+          <li><a href="#products" data-en="Products" data-bn="পণ্যসমূহ">Products</a></li>
+          <li><a href="#about" data-en="About Us" data-bn="আমাদের সম্পর্কে">About Us</a></li>
+          <li><a href="#contact" data-en="Contact" data-bn="যোগাযোগ">Contact</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h5 data-en="Connect" data-bn="যুক্ত হোন">Connect</h5>
+        <ul>
+          <li>
+            <a href="https://wa.me/8801XXXXXXXXX" target="_blank" rel="noopener">
+              <svg viewBox="0 0 24 24"><path d="M17.5 14.4c-.3-.2-1.7-.8-2-.9-.3-.1-.5-.2-.7.2-.2.3-.8.9-.9 1.1-.2.2-.3.2-.6.1-.3-.2-1.2-.5-2.3-1.4-.8-.7-1.4-1.6-1.6-1.9-.2-.3 0-.5.1-.6.1-.1.3-.3.4-.5.1-.2.2-.3.3-.5.1-.2 0-.4 0-.5 0-.1-.7-1.7-.9-2.3-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.2.2 2.2 3.3 5.3 4.6.7.3 1.3.5 1.7.6.7.2 1.4.2 1.9.1.6-.1 1.7-.7 1.9-1.4.2-.7.2-1.2.2-1.4-.1-.1-.3-.2-.6-.3M12 2a10 10 0 00-8.4 15.4L2 22l4.7-1.5A10 10 0 1012 2z"/></svg>
+              <span data-en="WhatsApp Order" data-bn="হোয়াটসঅ্যাপ অর্ডার">WhatsApp Order</span>
+            </a>
+          </li>
+          <li>
+            <a href="https://facebook.com/quantixbd" target="_blank" rel="noopener">
+              <svg viewBox="0 0 24 24"><path d="M22 12a10 10 0 10-11.6 9.9v-7H7.9V12h2.5V9.8c0-2.5 1.5-3.9 3.8-3.9 1.1 0 2.2.2 2.2.2v2.5h-1.3c-1.2 0-1.6.8-1.6 1.6V12h2.8l-.4 2.9h-2.4v7A10 10 0 0022 12z"/></svg>
+              <span data-en="Facebook Page" data-bn="ফেসবুক পেজ">Facebook Page</span>
+            </a>
+          </li>
+          <li>
+            <a href="mailto:hello@quantixbd.com">
+              <svg viewBox="0 0 24 24"><path d="M20 4H4a2 2 0 00-2 2v12a2 2 0 002 2h16a2 2 0 002-2V6a2 2 0 00-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+              <span>hello@quantixbd.com</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h5 data-en="Order Hours" data-bn="অর্ডারের সময়">Order Hours</h5>
+        <ul>
+          <li><span data-en="Sat – Thu: 9 AM – 10 PM" data-bn="শনি – বৃহস্পতি: সকাল ৯টা – রাত ১০টা">Sat – Thu: 9 AM – 10 PM</span></li>
+          <li><span data-en="Friday: 3 PM – 10 PM" data-bn="শুক্র: বিকাল ৩টা – রাত ১০টা">Friday: 3 PM – 10 PM</span></li>
+          <li><span data-en="Delivery: 2–5 days" data-bn="ডেলিভারি: ২–৫ দিন">Delivery: 2–5 days</span></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <div>
+        <span data-en="© 2026 Quantix BD. All rights reserved." data-bn="© ২০২৬ কোয়ান্টিক্স বিডি। সর্বস্বত্ব সংরক্ষিত।">© 2026 Quantix BD. All rights reserved.</span>
+      </div>
+      <div class="made" data-en="Made with ♥ in Bangladesh" data-bn="বাংলাদেশে ♥ দিয়ে তৈরি">Made with ♥ in Bangladesh</div>
+    </div>
+  </div>
+</footer>
+
+<!-- ============ FLOATING WHATSAPP ============ -->
+<a href="https://wa.me/8801XXXXXXXXX" class="float-whatsapp" target="_blank" rel="noopener" aria-label="Chat on WhatsApp">
+  <svg viewBox="0 0 24 24"><path d="M17.5 14.4c-.3-.2-1.7-.8-2-.9-.3-.1-.5-.2-.7.2-.2.3-.8.9-.9 1.1-.2.2-.3.2-.6.1-.3-.2-1.2-.5-2.3-1.4-.8-.7-1.4-1.6-1.6-1.9-.2-.3 0-.5.1-.6.1-.1.3-.3.4-.5.1-.2.2-.3.3-.5.1-.2 0-.4 0-.5 0-.1-.7-1.7-.9-2.3-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.2.2 2.2 3.3 5.3 4.6.7.3 1.3.5 1.7.6.7.2 1.4.2 1.9.1.6-.1 1.7-.7 1.9-1.4.2-.7.2-1.2.2-1.4-.1-.1-.3-.2-.6-.3M12 2a10 10 0 00-8.4 15.4L2 22l4.7-1.5A10 10 0 1012 2z"/></svg>
+</a>
+
+<script>
+  // ============ DATA ============
+  const WHATSAPP = "https://wa.me/8801XXXXXXXXX";
+
+  const products = [
+    {emoji:"🪥", tag:{en:"Hot",bn:"হট"}, en:{name:"Electronic Brush", desc:"Smart electric toothbrush for a brighter, healthier smile every day."}, bn:{name:"ইলেকট্রনিক ব্রাশ", desc:"উজ্জ্বল ও স্বাস্থ্যকর হাসির জন্য স্মার্ট ইলেকট্রিক টুথব্রাশ।"}},
+    {emoji:"✏️", tag:{en:"New",bn:"নতুন"}, en:{name:"Type C Rechargeable Pencil Battery", desc:"USB Type-C rechargeable AA battery pencil — no more disposables."}, bn:{name:"টাইপ সি রিচার্জেবল পেন্সিল ব্যাটারি", desc:"টাইপ-সি রিচার্জেবল AA পেন্সিল ব্যাটারি — আর ডিসপোজেবল নয়।"}},
+    {emoji:"💆", tag:null, en:{name:"Massage Combo (3/4/5 in 1)", desc:"Multi-head massage gun combo for neck, back, and full-body relief."}, bn:{name:"ম্যাসাজ কম্বো (৩/৪/৫ ইন ১)", desc:"ঘাড়, পিঠ ও সারা শরীরের জন্য মাল্টি-হেড ম্যাসাজ কম্বো।"}},
+    {emoji:"♨️", tag:{en:"Cozy",bn:"কোজি"}, en:{name:"Hot Water Bag", desc:"Reusable hot water pouch for muscle pain, period cramps, and warmth."}, bn:{name:"হট ওয়াটার ব্যাগ", desc:"মাংসপেশির ব্যথা ও ঠান্ডার জন্য পুনর্ব্যবহারযোগ্য হট ওয়াটার ব্যাগ।"}},
+    {emoji:"🔌", tag:null, en:{name:"Charge Stand 2-in-1 Cable", desc:"Foldable phone stand with built-in fast-charging cable. Travel friendly."}, bn:{name:"চার্জ স্ট্যান্ড ২-ইন-১ ক্যাবল", desc:"ফাস্ট চার্জিং ক্যাবল সহ ফোল্ডেবল ফোন স্ট্যান্ড। ট্রাভেল ফ্রেন্ডলি।"}},
+    {emoji:"⚡", tag:{en:"Trending",bn:"ট্রেন্ডিং"}, en:{name:"180° Rotating Head Charging Cable", desc:"Tangle-free rotating-head cable that fits any angle, any device."}, bn:{name:"১৮০° রোটেটিং হেড চার্জিং ক্যাবল", desc:"যেকোনো অ্যাঙ্গেলে ফিট রোটেটিং হেড ট্যাঙ্গেল-ফ্রি চার্জিং ক্যাবল।"}},
+    {emoji:"💧", tag:null, en:{name:"Foldable Water Bottle", desc:"Collapsible silicone bottle — leak-proof, BPA-free, perfect for travel."}, bn:{name:"ফোল্ডেবল ওয়াটার বোতল", desc:"ভাঁজ করা যায় এমন সিলিকন বোতল — লিক-প্রুফ, BPA মুক্ত।"}},
+    {emoji:"🌀", tag:{en:"Summer",bn:"সামার"}, en:{name:"Mini Cooler Fan", desc:"USB-powered portable mini fan with strong airflow for desk or travel."}, bn:{name:"মিনি কুলার ফ্যান", desc:"USB চালিত পোর্টেবল মিনি ফ্যান — ডেস্ক বা ট্রাভেলের জন্য।"}},
+    {emoji:"🔑", tag:null, en:{name:"Key Ring with Phone Number", desc:"Personalized key ring with phone number tag — never lose your keys."}, bn:{name:"ফোন নম্বর সহ কী রিং", desc:"ফোন নম্বর ট্যাগ সহ পার্সোনালাইজড কী রিং — চাবি আর হারাবে না।"}},
+    {emoji:"🌱", tag:null, en:{name:"3 PCS Mini Garden Tools", desc:"3-piece gardening set — perfect for balcony plants and home gardens."}, bn:{name:"৩ পিস মিনি গার্ডেন টুলস", desc:"৩-পিসের গার্ডেনিং সেট — ব্যালকনি ও বাড়ির বাগানের জন্য পারফেক্ট।"}},
+    {emoji:"🐲", tag:{en:"Cute",bn:"কিউট"}, en:{name:"Cute Dragon Eye Stress Toy", desc:"Squeeze the dragon — eyes pop out for instant stress relief and giggles."}, bn:{name:"কিউট ড্রাগন আই স্ট্রেস টয়", desc:"চাপ দিন আর চোখ ফুটে উঠবে — স্ট্রেস রিলিফ ও মজার জন্য।"}},
+    {emoji:"🐵", tag:{en:"Gift",bn:"গিফট"}, en:{name:"Cute Monkey LED Night Light", desc:"Adorable monkey-shaped LED lamp — soft glow for kids' rooms and gifts."}, bn:{name:"কিউট মাঙ্কি LED নাইট লাইট", desc:"মিষ্টি বাঁদর আকৃতির LED ল্যাম্প — বাচ্চাদের রুম ও গিফটের জন্য আদর্শ।"}}
+  ];
+
+  const team = [
+    {initial:"M", color1:"#1a6b3c", color2:"#2a8a52", en:{name:"Md. Rahman", role:"Founder & CEO", bio:"Leading Quantix BD's vision to bring trusted, affordable imports to every Bangladeshi home."}, bn:{name:"মোঃ রহমান", role:"প্রতিষ্ঠাতা ও সিইও", bio:"প্রতিটি বাংলাদেশি বাড়িতে বিশ্বস্ত ও সাশ্রয়ী পণ্য পৌঁছে দেওয়ার ভিশন নিয়ে নেতৃত্ব দিচ্ছেন।"}},
+    {initial:"A", color1:"#f0a500", color2:"#ffc24d", en:{name:"Ayesha Khan", role:"Operations Lead", bio:"Manages sourcing from Guangzhou to ensure every product meets our quality standards."}, bn:{name:"আয়েশা খান", role:"অপারেশনস লিড", bio:"গুয়াংজু থেকে সোর্সিং পরিচালনা করেন এবং প্রতিটি পণ্যের মান নিশ্চিত করেন।"}},
+    {initial:"T", color1:"#1a6b3c", color2:"#f0a500", en:{name:"Tanvir Ahmed", role:"Customer Care", bio:"Friendly voice on the other end of WhatsApp — making sure every order is a happy one."}, bn:{name:"তানভীর আহমেদ", role:"কাস্টমার কেয়ার", bio:"হোয়াটসঅ্যাপের অপর প্রান্তে বন্ধুসুলভ কণ্ঠস্বর — প্রতিটি অর্ডার আনন্দদায়ক করতে কাজ করেন।"}},
+    {initial:"S", color1:"#2a8a52", color2:"#ffc24d", en:{name:"Sadia Islam", role:"Marketing & Social", bio:"Crafting content and connecting with our Facebook community every single day."}, bn:{name:"সাদিয়া ইসলাম", role:"মার্কেটিং ও সোশ্যাল", bio:"প্রতিদিন কন্টেন্ট তৈরি ও আমাদের ফেসবুক কমিউনিটির সাথে যুক্ত থাকেন।"}}
+  ];
+
+  // ============ RENDER PRODUCTS ============
+  const productGrid = document.getElementById('productGrid');
+  products.forEach((p, i) => {
+    const msgEn = `Hi! I'd like to order: ${p.en.name}`;
+    const msgBn = `হ্যালো! আমি অর্ডার করতে চাই: ${p.bn.name}`;
+    const card = document.createElement('div');
+    card.className = 'product-card reveal';
+    card.style.transitionDelay = `${(i % 4) * 80}ms`;
+    card.innerHTML = `
+      <div class="product-image">
+        ${p.tag ? `<span class="product-tag" data-en="${p.tag.en}" data-bn="${p.tag.bn}">${p.tag.en}</span>` : ''}
+        <span class="product-emoji">${p.emoji}</span>
+      </div>
+      <div class="product-body">
+        <h3 data-en="${p.en.name}" data-bn="${p.bn.name}">${p.en.name}</h3>
+        <p data-en="${p.en.desc}" data-bn="${p.bn.desc}">${p.en.desc}</p>
+        <a href="${WHATSAPP}?text=${encodeURIComponent(msgEn)}"
+           data-msg-en="${encodeURIComponent(msgEn)}"
+           data-msg-bn="${encodeURIComponent(msgBn)}"
+           class="product-order whatsapp-product" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24"><path d="M17.5 14.4c-.3-.2-1.7-.8-2-.9-.3-.1-.5-.2-.7.2-.2.3-.8.9-.9 1.1-.2.2-.3.2-.6.1-.3-.2-1.2-.5-2.3-1.4-.8-.7-1.4-1.6-1.6-1.9-.2-.3 0-.5.1-.6.1-.1.3-.3.4-.5.1-.2.2-.3.3-.5.1-.2 0-.4 0-.5 0-.1-.7-1.7-.9-2.3-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.2.2 2.2 3.3 5.3 4.6.7.3 1.3.5 1.7.6.7.2 1.4.2 1.9.1.6-.1 1.7-.7 1.9-1.4.2-.7.2-1.2.2-1.4-.1-.1-.3-.2-.6-.3M12 2a10 10 0 00-8.4 15.4L2 22l4.7-1.5A10 10 0 1012 2z"/></svg>
+          <span data-en="Order on WhatsApp" data-bn="হোয়াটসঅ্যাপে অর্ডার">Order on WhatsApp</span>
+        </a>
+      </div>
+    `;
+    productGrid.appendChild(card);
+  });
+
+  // ============ RENDER TEAM ============
+  const teamGrid = document.getElementById('teamGrid');
+  team.forEach((m, i) => {
+    const card = document.createElement('div');
+    card.className = 'team-card reveal';
+    card.style.transitionDelay = `${i * 90}ms`;
+    card.innerHTML = `
+      <div class="team-avatar" style="background:linear-gradient(135deg,${m.color1},${m.color2})">${m.initial}</div>
+      <h3 class="team-name" data-en="${m.en.name}" data-bn="${m.bn.name}">${m.en.name}</h3>
+      <span class="team-role" data-en="${m.en.role}" data-bn="${m.bn.role}">${m.en.role}</span>
+      <p class="team-bio" data-en="${m.en.bio}" data-bn="${m.bn.bio}">${m.en.bio}</p>
+    `;
+    teamGrid.appendChild(card);
+  });
+
+  // ============ LANGUAGE TOGGLE ============
+  const body = document.body;
+  const htmlEl = document.documentElement;
+  const langToggle = document.getElementById('langToggle');
+  const langLabel = document.getElementById('langLabel');
+
+  function setLang(lang){
+    body.classList.toggle('lang-en', lang === 'en');
+    body.classList.toggle('lang-bn', lang === 'bn');
+    htmlEl.lang = lang === 'bn' ? 'bn' : 'en';
+    langLabel.textContent = lang === 'en' ? 'বাংলা' : 'English';
+    // Update product WhatsApp links with localized message
+    document.querySelectorAll('.whatsapp-product').forEach(a => {
+      const msg = lang === 'bn' ? a.dataset.msgBn : a.dataset.msgEn;
+      a.href = `${WHATSAPP}?text=${msg}`;
+    });
+    try { localStorage.setItem('quantix-lang', lang); } catch(e){}
+  }
+
+  let savedLang = 'en';
+  try { savedLang = localStorage.getItem('quantix-lang') || 'en'; } catch(e){}
+  setLang(savedLang);
+
+  langToggle.addEventListener('click', () => {
+    setLang(body.classList.contains('lang-en') ? 'bn' : 'en');
+  });
+
+  // ============ MOBILE MENU ============
+  const menuToggle = document.getElementById('menuToggle');
+  const mobileMenu = document.getElementById('mobileMenu');
+  menuToggle.addEventListener('click', () => {
+    menuToggle.classList.toggle('active');
+    mobileMenu.classList.toggle('open');
+  });
+  mobileMenu.querySelectorAll('a').forEach(a => {
+    a.addEventListener('click', () => {
+      menuToggle.classList.remove('active');
+      mobileMenu.classList.remove('open');
+    });
+  });
+
+  // ============ STICKY HEADER SHADOW ============
+  const header = document.querySelector('header');
+  window.addEventListener('scroll', () => {
+    header.classList.toggle('scrolled', window.scrollY > 8);
+  }, { passive: true });
+
+  // ============ REVEAL ON SCROLL ============
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.classList.add('visible');
+        io.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+</script>
+
+</body>
+</html>
