@@ -173,6 +173,27 @@ function initMobileMenu(){
   });
 }
 
+function initFAQ(){
+  const items = document.querySelectorAll('.faq-item');
+  if (!items.length) return;
+  items.forEach(item => {
+    const btn = item.querySelector('.faq-q');
+    if (!btn) return;
+    btn.addEventListener('click', () => {
+      const wasOpen = item.classList.contains('open');
+      items.forEach(other => {
+        other.classList.remove('open');
+        const otherBtn = other.querySelector('.faq-q');
+        if (otherBtn) otherBtn.setAttribute('aria-expanded', 'false');
+      });
+      if (!wasOpen){
+        item.classList.add('open');
+        btn.setAttribute('aria-expanded', 'true');
+      }
+    });
+  });
+}
+
 function initHeaderShadow(){
   const header = document.querySelector('header');
   if (!header) return;
@@ -200,4 +221,5 @@ document.addEventListener('DOMContentLoaded', () => {
   initHeaderShadow();
   initProductGallery();
   initTabs();
+  initFAQ();
 });
