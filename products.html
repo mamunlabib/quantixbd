@@ -59,8 +59,8 @@
   <div class="container">
     <div class="page-hero-inner">
       <div class="page-eyebrow"><span>Our Collection</span></div>
-      <h1>Browse Our <span class="accent">Products</span></h1>
-      <p>Twelve carefully chosen products, each one quality-checked and ready to ship. Search below or scroll to explore.</p>
+      <h1>All <span class="accent">Products</span></h1>
+      <p>Browse our complete collection of quality products.</p>
     </div>
   </div>
 </section>
@@ -77,6 +77,14 @@
         placeholder="Search products by name…"
         aria-label="Search products by name"
       />
+    </div>
+
+    <div class="category-filter reveal" id="categoryFilter" role="tablist" aria-label="Filter by category">
+      <button type="button" class="cat-btn active" data-category="all">All</button>
+      <button type="button" class="cat-btn" data-category="electronics">Electronics</button>
+      <button type="button" class="cat-btn" data-category="home">Home &amp; Living</button>
+      <button type="button" class="cat-btn" data-category="lifestyle">Lifestyle</button>
+      <button type="button" class="cat-btn" data-category="tools">Tools</button>
     </div>
 
     <div class="product-grid" id="productGrid"></div>
@@ -152,7 +160,12 @@
 <script src="assets/script.js"></script>
 <script>
   renderProductGrid('#productGrid', 'products/');
-  initProductSearch('#productSearch', '#productGrid', '#searchEmpty');
+  initProductFilters({
+    grid: '#productGrid',
+    search: '#productSearch',
+    filterBar: '#categoryFilter',
+    empty: '#searchEmpty'
+  });
   initReveal();
 </script>
 

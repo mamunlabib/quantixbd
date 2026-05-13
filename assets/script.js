@@ -5,18 +5,18 @@
 const WHATSAPP = "https://wa.me/8801333388489";
 
 const PRODUCTS = [
-  {slug:"electronic-brush",   emoji:"🪥", name:"Electronic Brush",                              short:"Smart electric brush for effortless cleaning"},
-  {slug:"pencil-battery",     emoji:"✏️", name:"Type C Rechargeable Pencil Battery",            short:"Modern rechargeable battery with USB Type C charging"},
-  {slug:"massage-combo",      emoji:"💆", name:"Massage Combo (3/4/5 in 1)",                    short:"All-in-one massage device with multiple heads"},
-  {slug:"hot-water-bag",      emoji:"♨️", name:"Hot Water Bag",                                  short:"Fast heating reusable hot water bag for pain relief"},
-  {slug:"chargestand-cable",  emoji:"🔌", name:"Chargestand 2-in-1 Cable",                      short:"Charges your device while holding it at the perfect angle"},
-  {slug:"rotating-cable",     emoji:"⚡", name:"180° Rotating Head Charging Cable",             short:"Flexible rotating connector for easy charging from any angle"},
-  {slug:"foldable-bottle",    emoji:"💧", name:"Foldable Water Bottle",                         short:"Collapsible eco-friendly bottle for on-the-go hydration"},
-  {slug:"mini-cooler-fan",    emoji:"🌀", name:"Mini Cooler Fan",                               short:"Compact personal fan for instant cooling anywhere"},
-  {slug:"key-ring",           emoji:"🔑", name:"Key Ring with Phone Number",                    short:"Smart key ring engraved with your phone number"},
-  {slug:"gardening-tools",    emoji:"🌱", name:"3 PCS Gardening Mini Garden Tools",             short:"Essential mini tool set for home gardening"},
-  {slug:"dragon-stress-toy",  emoji:"🐲", name:"Cute Dragon Eye Squeeze Stress Relief Toy",     short:"Satisfying squeeze toy for instant stress relief"},
-  {slug:"monkey-night-light", emoji:"🐵", name:"Cute Monkey LED Night Light",                   short:"Adorable LED night light perfect for kids rooms"}
+  {slug:"electronic-brush",   emoji:"🪥", name:"Electronic Brush",                              short:"Smart electric brush for effortless cleaning",            category:"electronics"},
+  {slug:"pencil-battery",     emoji:"✏️", name:"Type C Rechargeable Pencil Battery",            short:"Modern rechargeable battery with USB Type C charging",   category:"electronics"},
+  {slug:"massage-combo",      emoji:"💆", name:"Massage Combo (3/4/5 in 1)",                    short:"All-in-one massage device with multiple heads",          category:"lifestyle"},
+  {slug:"hot-water-bag",      emoji:"♨️", name:"Hot Water Bag",                                  short:"Fast heating reusable hot water bag for pain relief",    category:"home"},
+  {slug:"chargestand-cable",  emoji:"🔌", name:"Chargestand 2-in-1 Cable",                      short:"Charges your device while holding it at the perfect angle", category:"electronics"},
+  {slug:"rotating-cable",     emoji:"⚡", name:"180° Rotating Head Charging Cable",             short:"Flexible rotating connector for easy charging from any angle", category:"electronics"},
+  {slug:"foldable-bottle",    emoji:"💧", name:"Foldable Water Bottle",                         short:"Collapsible eco-friendly bottle for on-the-go hydration", category:"home"},
+  {slug:"mini-cooler-fan",    emoji:"🌀", name:"Mini Cooler Fan",                               short:"Compact personal fan for instant cooling anywhere",      category:"electronics"},
+  {slug:"key-ring",           emoji:"🔑", name:"Key Ring with Phone Number",                    short:"Smart key ring engraved with your phone number",         category:"home"},
+  {slug:"gardening-tools",    emoji:"🌱", name:"3 PCS Gardening Mini Garden Tools",             short:"Essential mini tool set for home gardening",             category:"tools"},
+  {slug:"dragon-stress-toy",  emoji:"🐲", name:"Cute Dragon Eye Squeeze Stress Relief Toy",     short:"Satisfying squeeze toy for instant stress relief",       category:"lifestyle"},
+  {slug:"monkey-night-light", emoji:"🐵", name:"Cute Monkey LED Night Light",                   short:"Adorable LED night light perfect for kids rooms",        category:"electronics"}
 ];
 
 const WA_SVG = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17.5 14.4c-.3-.2-1.7-.8-2-.9-.3-.1-.5-.2-.7.2-.2.3-.8.9-.9 1.1-.2.2-.3.2-.6.1-.3-.2-1.2-.5-2.3-1.4-.8-.7-1.4-1.6-1.6-1.9-.2-.3 0-.5.1-.6.1-.1.3-.3.4-.5.1-.2.2-.3.3-.5.1-.2 0-.4 0-.5 0-.1-.7-1.7-.9-2.3-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.2.2 2.2 3.3 5.3 4.6.7.3 1.3.5 1.7.6.7.2 1.4.2 1.9.1.6-.1 1.7-.7 1.9-1.4.2-.7.2-1.2.2-1.4-.1-.1-.3-.2-.6-.3M12 2a10 10 0 00-8.4 15.4L2 22l4.7-1.5A10 10 0 1012 2z"/></svg>';
@@ -30,7 +30,7 @@ function productCardHTML(p, basePath){
   const detailUrl = basePath + p.slug + ".html";
   const orderMsg = encodeURIComponent(`Hi! I'd like to order: ${p.name}`);
   return `
-    <article class="product-card reveal" data-name="${escAttr(p.name.toLowerCase())}">
+    <article class="product-card reveal" data-name="${escAttr(p.name.toLowerCase())}" data-category="${escAttr(p.category || '')}">
       <a href="${detailUrl}" class="product-image" aria-label="${escAttr(p.name)} details">
         <span class="product-emoji">${p.emoji}</span>
       </a>
@@ -53,10 +53,16 @@ function productCardHTML(p, basePath){
   `;
 }
 
-function renderProductGrid(containerSelector, basePath){
+function renderProductGrid(containerSelector, basePath, filterSlugs){
   const container = document.querySelector(containerSelector);
   if (!container) return;
-  container.innerHTML = PRODUCTS.map(p => productCardHTML(p, basePath)).join('');
+  let items = PRODUCTS;
+  if (Array.isArray(filterSlugs) && filterSlugs.length){
+    items = filterSlugs
+      .map(slug => PRODUCTS.find(p => p.slug === slug))
+      .filter(Boolean);
+  }
+  container.innerHTML = items.map(p => productCardHTML(p, basePath)).join('');
 }
 
 function renderRelatedProducts(containerSelector, currentSlug, count, basePath){
@@ -85,6 +91,40 @@ function initProductSearch(inputSelector, gridSelector, emptySelector){
     });
     if (empty) empty.classList.toggle('show', visible === 0);
   });
+}
+
+function initProductFilters({ grid: gridSel, search: searchSel, filterBar: filterSel, empty: emptySel }){
+  const grid = document.querySelector(gridSel);
+  if (!grid) return;
+  const search = searchSel ? document.querySelector(searchSel) : null;
+  const filterBar = filterSel ? document.querySelector(filterSel) : null;
+  const empty = emptySel ? document.querySelector(emptySel) : null;
+  let currentCategory = 'all';
+
+  function apply(){
+    const q = (search && search.value || '').toLowerCase().trim();
+    let visible = 0;
+    grid.querySelectorAll('.product-card').forEach(card => {
+      const nameMatch = card.dataset.name.includes(q);
+      const catMatch = currentCategory === 'all' || card.dataset.category === currentCategory;
+      const show = nameMatch && catMatch;
+      card.style.display = show ? '' : 'none';
+      if (show) visible++;
+    });
+    if (empty) empty.classList.toggle('show', visible === 0);
+  }
+
+  if (search) search.addEventListener('input', apply);
+  if (filterBar){
+    filterBar.querySelectorAll('.cat-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        filterBar.querySelectorAll('.cat-btn').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        currentCategory = btn.dataset.category || 'all';
+        apply();
+      });
+    });
+  }
 }
 
 function initProductGallery(){
