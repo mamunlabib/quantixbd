@@ -51,7 +51,7 @@ header.scrolled{
   box-shadow:0 8px 28px rgba(13,27,75,0.10);
   border-bottom-color:var(--border);
 }
-.nav{display:flex;align-items:center;justify-content:space-between;padding:14px 0;gap:12px}
+.nav{display:flex;align-items:center;justify-content:space-between;padding:14px 20px;gap:12px}
 .logo{
   display:flex;align-items:center;gap:10px;
   font-weight:800;font-size:1.35rem;
