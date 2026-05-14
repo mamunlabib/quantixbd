@@ -66,16 +66,63 @@
     </nav>
 
     <div class="product-detail-grid">
-      <div class="product-gallery reveal">
-        <div class="product-main-image thumb-v1">
-          <span class="product-main-emoji">💧</span>
+      <div class="product-gallery reveal" id="bottleGallery">
+        <style>
+          #bottleGallery .gallery-main{
+            width:100%;height:400px;border-radius:12px;overflow:hidden;
+            background:#f3f6fb;
+          }
+          #bottleGallery .gallery-main img{
+            width:100%;height:100%;object-fit:cover;display:block;
+            opacity:1;transition:opacity .3s ease;
+          }
+          #bottleGallery .gallery-main img.fading{opacity:0}
+          #bottleGallery .gallery-thumbs{
+            display:grid;grid-template-columns:repeat(5,1fr);gap:10px;margin-top:12px;
+          }
+          #bottleGallery .gallery-thumb{
+            aspect-ratio:1;padding:0;border:2px solid transparent;
+            border-radius:10px;overflow:hidden;background:#f3f6fb;
+            cursor:pointer;transition:border-color .2s ease;
+          }
+          #bottleGallery .gallery-thumb img{
+            width:100%;height:100%;object-fit:cover;display:block;
+          }
+          #bottleGallery .gallery-thumb.active{border-color:#1a73e8}
+          @media (max-width:640px){
+            #bottleGallery .gallery-main{height:250px}
+            #bottleGallery .gallery-thumbs{gap:8px}
+          }
+        </style>
+        <div class="gallery-main">
+          <img id="galleryMainImg" src="https://i.postimg.cc/RV7pyqQz/IMG-0318.jpg" alt="Foldable Water Bottle">
         </div>
-        <div class="product-thumbs">
-          <button class="product-thumb thumb-v1 active" data-variant="thumb-v1" aria-label="View 1"><span>💧</span></button>
-          <button class="product-thumb thumb-v2" data-variant="thumb-v2" aria-label="View 2"><span>💧</span></button>
-          <button class="product-thumb thumb-v3" data-variant="thumb-v3" aria-label="View 3"><span>💧</span></button>
-          <button class="product-thumb thumb-v4" data-variant="thumb-v4" aria-label="View 4"><span>💧</span></button>
+        <div class="gallery-thumbs">
+          <button type="button" class="gallery-thumb active" data-src="https://i.postimg.cc/RV7pyqQz/IMG-0318.jpg" aria-label="View 1"><img src="https://i.postimg.cc/RV7pyqQz/IMG-0318.jpg" alt=""></button>
+          <button type="button" class="gallery-thumb" data-src="https://i.postimg.cc/L6tQwhBF/IMG-0319.jpg" aria-label="View 2"><img src="https://i.postimg.cc/L6tQwhBF/IMG-0319.jpg" alt=""></button>
+          <button type="button" class="gallery-thumb" data-src="https://i.postimg.cc/6pBbXwzF/IMG-0320.jpg" aria-label="View 3"><img src="https://i.postimg.cc/6pBbXwzF/IMG-0320.jpg" alt=""></button>
+          <button type="button" class="gallery-thumb" data-src="https://i.postimg.cc/kg7Ym9wk/IMG-0321.jpg" aria-label="View 4"><img src="https://i.postimg.cc/kg7Ym9wk/IMG-0321.jpg" alt=""></button>
+          <button type="button" class="gallery-thumb" data-src="https://i.postimg.cc/DyrpHmQj/IMG-0322.jpg" aria-label="View 5"><img src="https://i.postimg.cc/DyrpHmQj/IMG-0322.jpg" alt=""></button>
         </div>
+        <script>
+          (function(){
+            const main = document.getElementById('galleryMainImg');
+            const thumbs = document.querySelectorAll('#bottleGallery .gallery-thumb');
+            thumbs.forEach(t => {
+              t.addEventListener('click', () => {
+                const src = t.dataset.src;
+                if (!src || main.src === src) return;
+                thumbs.forEach(x => x.classList.remove('active'));
+                t.classList.add('active');
+                main.classList.add('fading');
+                setTimeout(() => {
+                  main.src = src;
+                  main.classList.remove('fading');
+                }, 200);
+              });
+            });
+          })();
+        </script>
       </div>
 
       <div class="product-info reveal">

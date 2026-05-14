@@ -11,7 +11,7 @@ const PRODUCTS = [
   {slug:"hot-water-bag",      emoji:"♨️", name:"Hot Water Bag",                                  short:"Fast heating reusable hot water bag for pain relief",    category:"home"},
   {slug:"chargestand-cable",  emoji:"🔌", name:"Chargestand 2-in-1 Cable",                      short:"Charges your device while holding it at the perfect angle", category:"electronics"},
   {slug:"rotating-cable",     emoji:"⚡", name:"180° Rotating Head Charging Cable",             short:"Flexible rotating connector for easy charging from any angle", category:"electronics"},
-  {slug:"foldable-bottle",    emoji:"💧", name:"Foldable Water Bottle",                         short:"Collapsible eco-friendly bottle for on-the-go hydration", category:"home"},
+  {slug:"foldable-bottle",    emoji:"💧", name:"Foldable Water Bottle",                         short:"Collapsible eco-friendly bottle for on-the-go hydration", category:"home", image:"https://i.postimg.cc/RV7pyqQz/IMG-0318.jpg"},
   {slug:"mini-cooler-fan",    emoji:"🌀", name:"Mini Cooler Fan",                               short:"Compact personal fan for instant cooling anywhere",      category:"electronics"},
   {slug:"key-ring",           emoji:"🔑", name:"Key Ring with Phone Number",                    short:"Smart key ring engraved with your phone number",         category:"home"},
   {slug:"gardening-tools",    emoji:"🌱", name:"3 PCS Gardening Mini Garden Tools",             short:"Essential mini tool set for home gardening",             category:"tools"},
@@ -29,10 +29,13 @@ function escAttr(s){
 function productCardHTML(p, basePath){
   const detailUrl = basePath + p.slug + ".html";
   const orderMsg = encodeURIComponent(`Hi! I'd like to order: ${p.name}`);
+  const visual = p.image
+    ? `<img src="${escAttr(p.image)}" alt="${escAttr(p.name)}" style="width: 100%; height: 200px; object-fit: cover; border-radius: 8px;">`
+    : `<span class="product-emoji">${p.emoji}</span>`;
   return `
     <article class="product-card reveal" data-name="${escAttr(p.name.toLowerCase())}" data-category="${escAttr(p.category || '')}">
       <a href="${detailUrl}" class="product-image" aria-label="${escAttr(p.name)} details">
-        <span class="product-emoji">${p.emoji}</span>
+        ${visual}
       </a>
       <div class="product-body">
         <h3>${escAttr(p.name)}</h3>
