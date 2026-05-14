@@ -31,7 +31,7 @@ function productCardHTML(p, basePath){
   const detailUrl = basePath + p.slug + ".html";
   const orderMsg = encodeURIComponent(`Hi! I'd like to order: ${p.name}`);
   const visual = p.image
-    ? `<img src="${escAttr(p.image)}" alt="${escAttr(p.name)}" style="width: 100%; height: 200px; object-fit: cover; border-radius: 8px;">`
+    ? `<img src="${escAttr(p.image)}" alt="${escAttr(p.name)}" style="width: 100%; height: 220px; object-fit: cover; object-position: center; border-radius: 8px;">`
     : `<span class="product-emoji">${p.emoji}</span>`;
   return `
     <article class="product-card reveal" data-name="${escAttr(p.name.toLowerCase())}" data-category="${escAttr(p.category || '')}">

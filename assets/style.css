@@ -334,7 +334,7 @@ section{padding:80px 0;position:relative}
   border-color:rgba(26,115,232,0.35);
 }
 .product-image{
-  aspect-ratio:1;
+  height:220px;
   background:linear-gradient(135deg,var(--bg-soft),#e3f0ff);
   position:relative;overflow:hidden;
   display:grid;place-items:center;
