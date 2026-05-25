@@ -5,18 +5,7 @@
 const WHATSAPP = "https://wa.me/8801333388489";
 
 const PRODUCTS = [
-  {slug:"electronic-brush",   emoji:"🪥", name:"Electronic Brush",                              short:"Smart electric brush for effortless cleaning",            category:"electronics"},
-  {slug:"pencil-battery",     emoji:"✏️", name:"Type C Rechargeable Pencil Battery",            short:"Modern rechargeable battery with USB Type C charging",   category:"electronics"},
-  {slug:"massage-combo",      emoji:"💆", name:"Massage Combo (3/4/5 in 1)",                    short:"All-in-one massage device with multiple heads",          category:"lifestyle"},
-  {slug:"hot-water-bag",      emoji:"♨️", name:"Hot Water Bag",                                  short:"Fast heating reusable hot water bag for pain relief",    category:"home"},
-  {slug:"chargestand-cable",  emoji:"🔌", name:"Chargestand 2-in-1 Cable",                      short:"Charges your device while holding it at the perfect angle", category:"electronics"},
-  {slug:"rotating-cable",     emoji:"⚡", name:"180° Rotating Head Charging Cable",             short:"Flexible rotating connector for easy charging from any angle", category:"electronics"},
   {slug:"foldable-bottle",    emoji:"💧", name:"Foldable Water Bottle",                         short:"Collapsible eco-friendly bottle for on-the-go hydration", category:"home", image:"https://i.postimg.cc/RV7pyqQz/IMG-0318.jpg", salePrice:"৳499", originalPrice:"৳549", savings:"৳50"},
-  {slug:"mini-cooler-fan",    emoji:"🌀", name:"Mini Cooler Fan",                               short:"Compact personal fan for instant cooling anywhere",      category:"electronics"},
-  {slug:"key-ring",           emoji:"🔑", name:"Key Ring with Phone Number",                    short:"Smart key ring engraved with your phone number",         category:"home"},
-  {slug:"gardening-tools",    emoji:"🌱", name:"3 PCS Gardening Mini Garden Tools",             short:"Essential mini tool set for home gardening",             category:"tools"},
-  {slug:"dragon-stress-toy",  emoji:"🐲", name:"Cute Dragon Eye Squeeze Stress Relief Toy",     short:"Satisfying squeeze toy for instant stress relief",       category:"lifestyle"},
-  {slug:"monkey-night-light", emoji:"🐵", name:"Cute Monkey LED Night Light",                   short:"Adorable LED night light perfect for kids rooms",        category:"electronics"},
   {slug:"dragon-pocket-watch", emoji:"⌚", name:"Dragon Zodiac Pocket Watch",                    short:"Antique retro quartz pocket watch with dragon zodiac design and FOB chain", category:"lifestyle", image:"https://i.postimg.cc/Hx6QTQLr/IMG-0339.jpg"},
   {slug:"feather-quill-pen",  emoji:"🪶", name:"Vintage Feather Quill Pen Set",                 short:"Elegant vintage feather dip pen set with ink — perfect for gifting", category:"lifestyle", image:"https://i.postimg.cc/Xqmgw9LG/IMG-0348.jpg"},
   {slug:"hoco-smart-finder",  emoji:"📡", name:"Hoco E101 Smart Finder",                        short:"Dual anti-lost GPS tracker supporting both Apple Find My & Android Find Hub", category:"electronics", image:"https://i.postimg.cc/Kv2JmYyh/hoco-cat.png", salePrice:"৳790", originalPrice:"৳1,500", savings:"৳710"},
