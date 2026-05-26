@@ -439,7 +439,7 @@ section{padding:80px 0;position:relative}
 #contact .section-head p{color:rgba(255,255,255,0.85)}
 
 .contact-grid{
-  display:grid;grid-template-columns:1fr;gap:14px;
+  display:flex;flex-wrap:wrap;gap:14px;
   position:relative;z-index:1;
   max-width:900px;margin:0 auto;
 }
@@ -452,6 +452,7 @@ section{padding:80px 0;position:relative}
   transition:all .3s;
   display:flex;flex-direction:column;align-items:center;gap:6px;
   min-width:0;
+  flex:0 0 calc(50% - 7px);box-sizing:border-box;
 }
 .contact-card:hover{
   background:rgba(255,255,255,0.14);
@@ -1098,7 +1099,7 @@ footer{
   .product-detail-grid{grid-template-columns:1fr 1.05fr;gap:60px;align-items:start}
   .product-info{padding-top:10px}
   .contact-grid{gap:22px}
-  .contact-card{padding:30px 22px}
+  .contact-card{padding:30px 22px;flex-basis:calc(50% - 11px)}
   .contact-icon{width:64px;height:64px;margin-bottom:10px}
   .contact-icon svg{width:30px;height:30px}
   .contact-card h4{font-size:0.85rem;letter-spacing:1.2px}
