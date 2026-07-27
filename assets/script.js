@@ -34,7 +34,7 @@ function productCardHTML(p, basePath){
           <div class="price-row">
             <span class="sale-price">${escAttr(p.salePrice)}</span>
             <span class="original-price">${escAttr(p.originalPrice)}</span>
-            <span class="savings-pill">You save ${escAttr(p.savings)}!</span>
+            <span class="savings-pill"> Save ${escAttr(p.savings)}!</span>
           </div>
         </div>`
     : `<div class="product-price">৳ Contact Us</div>`;
