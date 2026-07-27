@@ -366,7 +366,7 @@ section{padding:80px 0;position:relative}
 }
 .product-price-sale{margin-bottom:10px}
 .product-price-sale .price-row{
-  display:flex;align-items:center;gap:8px;flex-wrap:wrap;
+  display:flex;align-items:center;gap:8px;flex-wrap:nowrap;
 }
 .product-price-sale .sale-price{
   font-size:1.25rem;font-weight:800;color:#d93025;letter-spacing:-0.3px;
